@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -11,14 +12,14 @@ const Navbar = () => {
                     <img width="40" height="35" src="https://img.icons8.com/ios-glyphs/90/120AFB/health-checkup.png" alt="StayHealthy Logo"/>
                 </div>
                 <div className="d-flex">
-                    <h6 className=" fw-normal fs-6 mx-3 navblinks  ">Home</h6>                
-                    <h6 className=" fw-normal fs-6 mx-3 navblinks ">Appointments</h6>
-                    <h6 className=" fw-normal fs-6 mx-3 navblinks ">Health Blog</h6>
-                    <h6 className=" fw-normal fs-6 mx-3 navblinks ">Reviews</h6>                
+                    <NavLink to="/" className=" fw-normal fs-6 mx-3 navblinks  ">Home</NavLink>                
+                    <NavLink to="/" className=" fw-normal fs-6 mx-3 navblinks ">Appointments</NavLink>
+                    <NavLink to="/" className=" fw-normal fs-6 mx-3 navblinks ">Health Blog</NavLink>
+                    <NavLink to="/" className=" fw-normal fs-6 mx-3 navblinks ">Reviews</NavLink>                
                 </div>
                 <div class="d-flex">
-                    <a href="" className="btn btn-primary me-3 px-4 shadow rounded-pill nav-butn">Sign Up</a>
-                    <a href="" className="btn btn-outline-primary me-3 px-4  shadow rounded-pill nav-butn">Login</a>                
+                    <NavLink to="/signup"><a href="" className="btn btn-primary me-3 px-4 shadow rounded-pill nav-butn">Sign Up</a></NavLink>
+                    <NavLink to="/login"><a href="" className="btn btn-outline-primary me-3 px-4  shadow rounded-pill nav-butn">Login</a></NavLink>                
                 </div>
             </div>
         </nav>

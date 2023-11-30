@@ -17,7 +17,8 @@ const Login = () => {
                                 <span class=" text-capitalize">email</span>
                             </label>
                         </div>             
-                        <input id="emailinput" name="email" type="email" placeholder="Enter your email" class="form-control" />                    
+                        <input onChange={(e)=>setEmail(e.target.value)} id="emailinput" name="email" type="email" placeholder="Enter your email" class="form-control" required/>                    
+                        {showerr && <div className="alert alert-danger" style={{ color: 'red' }}>{showerr}</div>}                        
                     </div>
                     <div class="form-group mb-3">   
                         <div>
@@ -25,7 +26,7 @@ const Login = () => {
                                 <span class=" text-capitalize">Password</span>
                             </label>
                         </div>             
-                        <input id="passwordinput" name="password" type="password" placeholder="Enter your password" class="form-control" />
+                        <input onChange={(e)=>setPassword(e.target.value)} id="passwordinput" name="password" type="password" placeholder="Enter your password" class="form-control" required/>
                     </div>
                     
                     <div class="mt-4">
