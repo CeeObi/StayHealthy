@@ -12,8 +12,7 @@ const Sign_Up = () => {
     const [showerr, setShowerr] = useState('');
     const navigate = useNavigate();
 
-    const register = async (e) => {
-              
+    const register = async (e) => {              
         e.preventDefault();
         // API Call
         const response = await fetch(`${API_URL}/api/auth/register`, {
@@ -84,7 +83,7 @@ const Sign_Up = () => {
                                 <span class=" text-capitalize">Phone</span>
                             </label>
                         </div>             
-                        <input onChange={(e)=>setPhone(e.target.value)} id="phoneinput" name="phone" type="number" placeholder="Enter your phone number" class="form-control" required pattern='\d{10}' title='Please input 10 digits' minlength="10"/>                    
+                        <input onChange={(e)=>setPhone(e.target.value)} id="phoneinput" name="phone" type="number" placeholder="Enter your phone number" class="form-control" required pattern='\d{10}' title='Please input 10 digits' minLength="10"/>                    
                     </div>
                     <div class="form-group mb-3">   
                         <div>
