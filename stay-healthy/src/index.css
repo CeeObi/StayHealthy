@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.navb{
+    font-family: 'Jost', sans-serif;
+    background-color: #e8eef6
+}
+
+
+.navblinks{
+transition: all 0.5s ease-in-out;}
+
+.navblinks:hover{
+color: rgb(143, 143, 144);
+transform: scale(0.98);}  
+
+
+.nav-butn{
+    transition: all 0.5s ease-in-out;}
+
+.nav-butn:hover{
+    transform: scale(0.98);} 
+
+.form-bg{
+    font-family: 'Jost', sans-serif;
+    background-color: #E5E5E5 ;
+}
+
+
