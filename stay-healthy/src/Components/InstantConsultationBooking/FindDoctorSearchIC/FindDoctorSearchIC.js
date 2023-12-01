@@ -20,6 +20,7 @@ const FindDoctorSearchIC = () => {
     }
     return (
         <div className='finddoctor'>
+        
             <center>
                 <h1>Find a doctor and Consult instantly</h1>
                 <div>               <i style={{color:'#000000',fontSize:'20rem'}} className="fa fa-user-md"></i>
@@ -43,7 +44,7 @@ const FindDoctorSearchIC = () => {
                 </div>
             </center>
         </div>
-    )
+        )
 }
 
 export default FindDoctorSearchIC
