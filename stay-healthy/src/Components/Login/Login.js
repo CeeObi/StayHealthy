@@ -13,7 +13,7 @@ const Login = () => {
                 <form method="POST" class="mx-auto w-100">            
                     <div class="form-group mb-3">   
                         <div>
-                            <label for="emailinput">
+                            <label htmlFor="emailinput">
                                 <span class=" text-capitalize">email</span>
                             </label>
                         </div>             
@@ -22,7 +22,7 @@ const Login = () => {
                     </div>
                     <div class="form-group mb-3">   
                         <div>
-                            <label for="passwordinput">
+                            <label htmlFor="passwordinput">
                                 <span class=" text-capitalize">Password</span>
                             </label>
                         </div>             

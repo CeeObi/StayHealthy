@@ -22,20 +22,20 @@ const Navbar = () => {
                     <NavLink to="/" className=" fw-normal fs-6 mx-3 navblinks ">Health Blog</NavLink>
                     <NavLink to="/" className=" fw-normal fs-6 mx-3 navblinks ">Reviews</NavLink>                
                 </div>
-                <div class="d-flex">
+                <div className="d-flex">
                     {
                         usersName 
                         ? 
                         <div className="align-self-center mx-3">Welcome, {usersName}</div>                    
                         :
-                        <NavLink to="/signup"><a href="" className="btn btn-primary me-3 px-4 shadow rounded-pill nav-butn">Sign Up</a></NavLink> 
+                        <NavLink to="/signup" className="btn btn-primary me-3 px-4 shadow rounded-pill nav-butn">Sign Up</NavLink> 
                     }
                     {
                         usersName
                         ?
-                        <NavLink to="/"><a href="" className="btn btn-outline-primary me-3 px-4  shadow rounded-pill nav-butn">Logout</a></NavLink>
+                        <NavLink to="/" className="btn btn-outline-primary me-3 px-4  shadow rounded-pill nav-butn">Logout</NavLink>
                         :
-                        <NavLink to="/login"><a href="" className="btn btn-outline-primary me-3 px-4  shadow rounded-pill nav-butn">Login</a></NavLink>                
+                        <NavLink to="/login" className="btn btn-outline-primary me-3 px-4  shadow rounded-pill nav-butn">Login</NavLink>                
                     }
                 </div>
             </div>
