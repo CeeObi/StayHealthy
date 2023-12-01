@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import findDoctor from "./12291154_Wavy_Tech-25_Single-08.svg";
+import fmPrf from "./docprofilefml.svg";
+import mPrf from "./docprofileml.svg";
+import DrCard from '../../DrCard';
+
+
 
 const initSpeciality = [
     'Dentist', 'Gynecologist/obstetrician', 'General Physician', 'Dermatologist', 'Ear-nose-throat (ent) Specialist', 'Homeopath', 'Ayurveda'
@@ -39,44 +44,11 @@ const FindDoctorSearch = () => {
                 <h5 className='text-center opacity-50 mt-0 pt-0'> Book appointments with minimum wait time and verified doctor details</h5>
                 <hr className='w-75 mx-auto mt-0 pt-0'/>
 
-                
-                <div class="row row-cols-1 row-cols-md-3 g-4">
-                    <div class="col">
-                        <div class="card h-100">
-                        <img src="..." class="card-img-top" alt="..."/>
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Last updated 3 mins ago</small>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100">
-                        <img src="..." class="card-img-top" alt="..."/>
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Last updated 3 mins ago</small>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100">
-                        <img src="..." class="card-img-top" alt="..."/>
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Last updated 3 mins ago</small>
-                        </div>
-                        </div>
-                    </div>
+                <div class="row row-cols-1 row-cols-md-3 g-5 w-75 mx-auto">                    
+                    <DrCard pixsrc={fmPrf} drname="Dr Yin Gaef" specialty="Dentist" noexp="7"/>
+                    <DrCard pixsrc={mPrf} drname="Dr Ralph Jack" specialty="Dentist" noexp="9"/>
+                    <DrCard pixsrc={fmPrf} drname="Dr Yin Gaef" specialty="Dentist" noexp="15"/>
+                    <DrCard pixsrc={fmPrf} drname="Dr Yin Gaef" specialty="Dentist" noexp="5"/>                                       
                 </div>
 
 
