@@ -2,11 +2,17 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 
 const getEmailFromSessionStorage = () => {
-    return JSON.parse(sessionStorage.getItem("email")) || null;//"John@gmail.com";
+    return sessionStorage.getItem("email") || null;//"John@gmail.com";
+}
+
+const removeUserFromSessionStorage = () => {
+    sessionStorage.removeItem("email");
+    sessionStorage.removeItem("name");
+    sessionStorage.removeItem("auth-token");
+    sessionStorage.removeItem("phone");
 }
 
 const Navbar = () => {
-
     const usersName=getEmailFromSessionStorage()?.split('@', 1)[0];
   return (
     <div>
@@ -26,16 +32,16 @@ const Navbar = () => {
                     {
                         usersName 
                         ? 
-                        <div className="align-self-center mx-3">Welcome, {usersName}</div>                    
+                        <div className="align-self-center mx-3 text-capitalize">Welcome, {usersName}</div>                    
                         :
                         <NavLink to="/signup" className="btn btn-primary me-3 px-4 shadow rounded-pill nav-butn">Sign Up</NavLink> 
                     }
                     {
                         usersName
                         ?
-                        <NavLink to="/" className="btn btn-outline-primary me-3 px-4  shadow rounded-pill nav-butn">Logout</NavLink>
+                        <NavLink onClick={removeUserFromSessionStorage} to="/" className="btn btn-outline-primary me-3 px-4  shadow rounded-pill nav-butn">Logout</NavLink>
                         :
-                        <NavLink to="/login" className="btn btn-outline-primary me-3 px-4  shadow rounded-pill nav-butn">Login</NavLink>                
+                        <NavLink to="/login" className="btn btn-outline-primary me-3 px-4 shadow rounded-pill nav-butn">Login</NavLink>                
                     }
                 </div>
             </div>
