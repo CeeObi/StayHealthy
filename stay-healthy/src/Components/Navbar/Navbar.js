@@ -35,7 +35,7 @@ const Navbar = () => {
                         ? 
                         <div className="align-self-center mx-3 text-capitalize">Welcome, {usersName}</div>                    
                         :
-                        <NavLink to="/signup" className="btn btn-primary me-3 px-4 shadow rounded-pill nav-butn">Sign Up</NavLink> 
+                        <NavLink to="/register" className="btn btn-primary me-3 px-4 shadow rounded-pill nav-butn">Sign Up</NavLink> 
                     }
                     {
                         usersName
