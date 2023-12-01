@@ -4,16 +4,21 @@ import { Link, useNavigate } from 'react-router-dom';
 import { API_URL } from '../../config';
 
 
-const Login = () => {    
+const Login = () => {
+    
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState('');
-  const [showerr, setShowerr] = useState('');
   const navigate = useNavigate();
+  const [showerr, setShowerr] = useState('');
+
+
   useEffect(() => {
     if (sessionStorage.getItem("auth-token")) {
       navigate("/")
     }
   }, []);
+
+
   const login = async (e) => {
     e.preventDefault();
     const res = await fetch(`${API_URL}/api/auth/login`, {
@@ -27,6 +32,8 @@ const Login = () => {
         password: password,
       }),
     });
+
+    
     const json = await res.json();
     if (json.authtoken) {
       sessionStorage.setItem('auth-token', json.authtoken);
@@ -35,18 +42,17 @@ const Login = () => {
       navigate('/');
       window.location.reload()
     } else {
-      if (json.errors) {
-        for (const error of json.errors) {
-          alert(error.msg);
+      if (json.error) {        
+        for (const error of json.error) {
+            console.log(json.error )
+            setShowerr(json.error);
         }
       } else {
-        alert(json.error);
+        console.log(json.error )
+        setShowerr(json.error);
       }
     }
   };
-
-
-
 
 
   return (
@@ -57,7 +63,7 @@ const Login = () => {
                 <p class="text-center">
                     Are you a new member? <a to="/register" class="text-capitalize text-decoration-none"> Sign Up Here</a>
                 </p>
-                <form method="POST" class="mx-auto w-100">            
+                <form method="POST" class="mx-auto w-100" onSubmit={login}>            
                     <div class="form-group mb-3">   
                         <div>
                             <label htmlFor="emailinput">

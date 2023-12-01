@@ -10,6 +10,7 @@ const removeUserFromSessionStorage = () => {
     sessionStorage.removeItem("name");
     sessionStorage.removeItem("auth-token");
     sessionStorage.removeItem("phone");
+    window.location.reload()
 }
 
 const Navbar = () => {

@@ -27,8 +27,7 @@ const Sign_Up = () => {
                 phone: phone,
             }),
         });        
-        const json = await response.json();
-        console.log(json.error )
+        const json = await response.json();        
         if (json.authtoken) {
             sessionStorage.setItem("auth-token", json.authtoken);
             sessionStorage.setItem("name", name);
