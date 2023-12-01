@@ -47,12 +47,11 @@ const Sign_Up = () => {
             }
         }
     };
-
     
   return (
     <div>
     <section className="vh-100 d-flex align-items-center" >
-            <div className="mx-auto col-12 col-xs-10 col-sm-8 col-lg-6 col-xl-3 form-bg shadow px-3 px-sm-4 px-lg-5">
+            <div className="mx-auto col-12 col-xs-10 col-sm-8 col-lg-6 col-xl-4 form-bg shadow px-3 px-sm-4 px-lg-5">
                 <h2 className="text-black text-center font-bold text-3xl mt-5">Sign Up</h2>
                 <p className="text-center">
                     Aready a member? <Link to="/login" className="text-capitalize text-decoration-none text-primary">Login</Link>
