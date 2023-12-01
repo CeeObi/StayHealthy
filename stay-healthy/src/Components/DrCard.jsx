@@ -22,9 +22,10 @@ const DrCard = ({pixsrc, drname , specialty ,noexp,}) => {
                                 </p>
                             </div>
                             <div class="card-footer bg-primary rounded-2">
-                                <Link to="/">
-                                    <h6 class="text-center fw-bold text-white mt-2 mb-0 pb-0  navblinks">Book Appointment</h6>
-                                    <h6 class="text-center fs-6 lead text-white mb-2 mt-0 pt-0  navblinks">No Booking Fees</h6>
+                                <Link to="/" >
+                                <div className='navblinks'>
+                                    <h6 class="text-center fw-bold text-white mt-2 mb-0 pb-0 ">Book Appointment</h6>
+                                    <h6 class="text-center fs-6 lead text-white mb-2 mt-0 pt-0">No Booking Fees</h6></div>
                                 </Link>
                             </div>
                         </div>
