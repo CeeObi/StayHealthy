@@ -28,9 +28,9 @@ const FindDoctorSearch = () => {
                 <h2 className=''> Find a doctor and consult instantly</h2>
                 
                 <input type="text" class="form-control border-primary opacity-50" id="inlineFormInputGroupUsername" placeholder="@ Search doctors by specialty..." onFocus={()=>setListDoctorsHidden(false)} onBlur={()=>setListDoctorsHidden(true)}/>
-                <div className="border border-dark rounded-end" hidden={listDoctorsHidden}>
+                <div className="border border-primary  border-opacity-50 " hidden={listDoctorsHidden}>
                     {
-                        specialities.map(speciality => <div className="search-doctor-result-item" key={speciality} onMouseDown={() => handleDoctorSelect(speciality)}>
+                        specialities.map(speciality => <div className="search-doctor-result-item border-primary border-opacity-50" key={speciality} onMouseDown={() => handleDoctorSelect(speciality)}>
                             <span><img src={process.env.PUBLIC_URL + '/images/search.svg'} alt="" style={{height:"10px", width:"10px"}} width="12" /></span>
                             <span>{speciality}</span>
                             <span>SPECIALITY</span>
