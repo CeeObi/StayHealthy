@@ -9,7 +9,8 @@ import InstantConsultation from "./Components/InstantConsultationBooking/Instant
 import FindDoctorSearchIC from './Components/InstantConsultationBooking/FindDoctorSearchIC/FindDoctorSearchIC';
 import FindDoctorSearch from './Components/FindDoctorSearch/FindDoctorSearch';
 import AppointmentFormIC from './Components/InstantConsultationBooking/AppointmentFormIC/AppointmentFormIC';
-// import AppointmentForm from './Components/AppointmentForm/AppointmentForm';
+import AppointmentForm from './Components/AppointmentForm/AppointmentForm';
+import DrCard from './Components/DoctorCard/DrCard';
 
 
 
@@ -27,7 +28,7 @@ function App() {
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/instant-consultation" element={<InstantConsultation/>}/>                
                 <Route path="/findadoctor" element={<FindDoctorSearchIC/>}/>                
-                <Route path="/finddoctorsrc" element={<AppointmentFormIC/>}/>                
+                <Route path="/finddoctorsrc" element={<DrCard/>}/>                
             </Routes>
             
         </BrowserRouter>
