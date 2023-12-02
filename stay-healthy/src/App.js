@@ -28,7 +28,7 @@ function App() {
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/instant-consultation" element={<InstantConsultation/>}/>                
                 <Route path="/findadoctor" element={<FindDoctorSearchIC/>}/>                
-                <Route path="/finddoctorsrc" element={<DrCard/>}/>                
+                <Route path="/finddoctorsrc" element={<FindDoctorSearch/>}/>                
             </Routes>
             
         </BrowserRouter>
