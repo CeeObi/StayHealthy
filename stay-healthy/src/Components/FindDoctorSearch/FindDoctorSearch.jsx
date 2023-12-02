@@ -13,8 +13,8 @@ const FindDoctorSearch = () => {
     const handleDoctorSelect=() =>{
         console.log("drselect")
     }
-    return (<div className='row'>
-            <div className='mx-auto w-75 my-5'>
+    return (<div className='row mb-0 pb-0'>
+            <div className='mx-auto w-75 mt-5 mb-0 pb-0'>
                 <h2 className=''> Find a doctor and consult instantly</h2>                
                 <input type="text" class="form-control border-primary opacity-50 fa fa-search" id="inlineFormInputGroupUsername" placeholder="&#xF002; Search doctors by specialty..." onFocus={()=>setListDoctorsHidden(false)} onBlur={()=>setListDoctorsHidden(true)}/>
                 <div className=" " hidden={listDoctorsHidden}>
@@ -30,15 +30,15 @@ const FindDoctorSearch = () => {
                 <div className='mx-auto my-3 d-flex justify-content-center w-75' >
                     <img className=' ' src={findDoctor} alt="" hidden={!listDoctorsHidden} style={{width:"60%"}}/>
                 </div>
-                <h4 className='text-center mb-0 pb-0'> 8 doctors available</h4>
+                {/* <h4 className='text-center mb-0 pb-0'> 8 doctors available</h4>
                 <h5 className='text-center opacity-50 mt-0 pt-0'> Book appointments with minimum wait time and verified doctor details</h5>
-                <hr className='w-75 mx-auto mt-0 mb-5 pt-0'/>
-                <div class="row row-cols-1 row-cols-md-4 g-3 mx-auto">                    
+                <hr className='w-75 mx-auto mt-0 mb-3 pt-0'/> */}
+                {/* <div class="row row-cols-1 row-cols-md-4 g-3 mx-auto">                    
                     <DrCard pixsrc={fmPrf} drname="Dr Yin Gaef" specialty="Dentist" noexp="7"/>
                     <DrCard pixsrc={mPrf} drname="Dr Ralph Jack" specialty="Dentist" noexp="9"/>
                     <DrCard pixsrc={fmPrf} drname="Dr Yin Gaef" specialty="Dentist" noexp="15"/>
                     <DrCard pixsrc={fmPrf} drname="Dr Yin Gaef" specialty="Dentist" noexp="5"/>                                       
-                </div>
+                </div> */}
             </div>
       </div>
   )

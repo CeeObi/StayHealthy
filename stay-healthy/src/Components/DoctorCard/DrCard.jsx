@@ -36,7 +36,7 @@ const DrCard = ({pixsrc=fmPrf, drname="Dr James Gian" , specialty="Dentist" , no
             <div class="card-body mt-0 pt-1 pb-0 mb-0 ">
                 <h5 class="card-title text-center fs-6 my-0 pt-1 pb-0 fw-bold ">{drname}</h5>
                 <p class="card-text lead fs-6 text-center">{specialty}</p>
-                <p class="card-text text-center mb-0 pb-0"><em>{noexp} years experience</em></p>
+                <p className="card-text text-center mb-0 pb-0 opacity-75 "><em>{noexp} years experience</em></p>
                 <p class="card-text text-center my-0 py-0 ">Ratings: 
                     <i class="fa fa-star ms-1 text-warning" aria-hidden="true"/>
                     <i class="fa fa-star ms-1 text-warning" aria-hidden="true"/>
