@@ -1,21 +1,22 @@
 import React, { useState } from 'react'
 
-const AppointmentForm = () => {
-    const handleFormSubmit = () =>{
+const AppointmentForm = ({handleBooking}) => {
+    // const handleFormSubmit = () =>{
 
-    }
+    // }
 
     const [name,setName] = useState("")
     const [phone,setPhone] = useState("")
     const [date,setDate] = useState("")
-    const [time,setTime] = useState("01:33")
+    const [time,setTime] = useState("00:00")
+
 
 
   return (
     <section className=" d-flex align-items-center py-0 my-3 w-100 " >
                 <div className="mx-auto form-bg shadow px-3 px-sm-4 px-lg-5 mt-0 pt-0" style={{width: "60%"}} >
                     <h2 className="text-black text-center font-bold text-3xl pt-4 ">Talk to a doctor</h2>                
-                    <form method="POST" className="mx-auto w-100" onSubmit={handleFormSubmit} >            
+                    <form method="POST" className="mx-auto w-100" onSubmit={(event) => {return handleBooking(event)}} >            
                         <div className="form-group mb-3">   
                             <div>
                                 <label htmlFor="nameinput">
