@@ -13,7 +13,7 @@ const FindDoctorSearch = () => {
         console.log(`${eventSpecialtySearched} This event`)
         setSearchDoctor(eventSpecialtySearched)
         navigate(`/booking-consultation?specialty=${eventSpecialtySearched}`);
-        window.location.reload();
+        // window.location.reload();
     }
 
 

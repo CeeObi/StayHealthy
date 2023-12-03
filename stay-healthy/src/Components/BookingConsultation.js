@@ -12,10 +12,6 @@ const BookingConsultation = () => {
     const [availableDoctors,setAvailableDoctors]=useState([]);
     const searchedDoctorsSpecialty = searchParams.get('specialty');
     const [listProfilePics,setListProfilePics]= useState([]);
-    const handleSearch = () =>{
-        console.log("GOT CLICKED")
-    }    
-
     
     useEffect(() => {
         if (searchedDoctorsSpecialty){
@@ -29,9 +25,9 @@ const BookingConsultation = () => {
     }},[searchParams])
 
   return (<>
-    <FindDoctorSearch onSearch={handleSearch}  />
+    <FindDoctorSearch />
     <div className='mx-auto w-75 my-5 pt-0 mt-0'>
-        {(availableDoctors.length>1) && <h4 className='text-center mb-0 pb-0'><strong className="text-primary fs-3 fw-bold">{availableDoctors.length}</strong> doctors available</h4>}
+        {(searchedDoctorsSpecialty) && <h4 className='text-center mb-0 pb-0'><strong className="text-primary fs-3 fw-bold">{availableDoctors.length}</strong> doctors available</h4>}
         <h5 className='text-center opacity-50 mt-0 pt-0'> Book appointments with minimum wait time and verified doctor details</h5>
         <hr className='w-25 mx-auto mt-0 mb-1 pt-0'/>
         <hr className='w-75 mx-auto mt-0 mb-3 pt-0'/>
@@ -52,6 +48,9 @@ const BookingConsultation = () => {
     </>
   )
 }
+
+
+
 
 export default BookingConsultation
 
