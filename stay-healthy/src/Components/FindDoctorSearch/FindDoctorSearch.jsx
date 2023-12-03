@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import findDoctor from "../../utils/finddoc.svg";
 import { useNavigate } from 'react-router-dom';
-const initSpeciality = [
-    'Dentist', 'Gynecologist/obstetrician', 'General Physician', 'Dermatologist', 'Ear-nose-throat (ent) Specialist', 'Homeopath', 'Ayurveda'
-]
+import {initSpeciality} from '../../utils/GetData';
+
+
 const FindDoctorSearch = () => {
     const navigate = useNavigate()
     const [specialities, setSpecialities] = useState(initSpeciality);
@@ -16,10 +16,11 @@ const FindDoctorSearch = () => {
         window.location.reload();
     }
 
+
     return (<div className='row mb-0 pb-0'>
             <div className='mx-auto w-75 mt-5 mb-0 pb-0'>
                 <h2 className=''> Find a doctor and consult instantly</h2>                
-                <input value={searchDoctor} type="text" class="form-control border-primary opacity-50 fa fa-search" id="inlineFormInputGroupUsername" placeholder="&#xF002; Search doctors by specialty..." onFocus={()=>setListDoctorsHidden(false)} onBlur={()=>setListDoctorsHidden(true)}/>
+                <input onChange={(event)=>setSearchDoctor(event.target.value)}  value={searchDoctor} type="text" class="form-control border-primary opacity-50 fa fa-search" id="inlineFormInputGroupUsername" placeholder="&#xF002; Search doctors by specialty..." onFocus={()=>setListDoctorsHidden(false)} onBlur={()=>setListDoctorsHidden(true)}/>
                 <div className=" " hidden={listDoctorsHidden}>
                     {
                         specialities.map(speciality => 
@@ -37,5 +38,7 @@ const FindDoctorSearch = () => {
       </div>
   )
 }
+
+
 
 export default FindDoctorSearch

@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 
-const DrCard = ({pixsrc=fmPrf, drname="Dr James Gian" , specialty="Dentist" , noexp="23",ratings="⭐⭐"}) => {
+const DrCard = ({pixsrc=fmPrf, drname="Dr James Gian" , specialty="Dentist" , noexp="23",ratings}) => {
     const [showModal,setShowModal] = useState(false);
     const [appointments, setAppointments] = useState([]);
     const [bgColor,setBgColor] = useState("primary");    
@@ -28,22 +28,16 @@ const DrCard = ({pixsrc=fmPrf, drname="Dr James Gian" , specialty="Dentist" , no
     }    
 
   return (
-    <div key="" class="col mt-3 mx-auto">
+    <div key="" class="col col-10 mt-3 mx-auto">
         <div class="mx-auto card " style={{width:"100%"}}>
-            <div className='mx-auto col-4 col-sm-4 col-md-7 col-lg-6 mt-2 d-flex justify-content-center mb-0'>
+            <div className='mx-auto col-4 col-sm-5 col-md-5 col-lg-6 mt-2 d-flex justify-content-center mb-0'>
                 <img src={pixsrc} class="card-img-top img-thumbnail mb-0 pb-0 rounded-circle border-primary" alt="..." style={{width:"100%"}}/>
             </div>
             <div class="card-body mt-0 pt-1 pb-0 mb-0 ">
                 <h5 class="card-title text-center fs-6 my-0 pt-1 pb-0 fw-bold ">{drname}</h5>
                 <p class="card-text lead fs-6 text-center">{specialty}</p>
                 <p className="card-text text-center mb-0 pb-0 opacity-75 "><em>{noexp} years experience</em></p>
-                <p class="card-text text-center my-0 py-0 ">Ratings: 
-                    <i class="fa fa-star ms-1 text-warning" aria-hidden="true"/>
-                    <i class="fa fa-star ms-1 text-warning" aria-hidden="true"/>
-                    <i class="fa fa-star ms-1 text-warning" aria-hidden="true"/>
-                    <i class="fa fa-star ms-1 text-warning" aria-hidden="true"/>
-                    <i class="fa fa-star ms-1 text-warning opacity-50" aria-hidden="true"/>
-                </p>
+                <p class="card-text text-center my-0 py-0 fs-6 ">Ratings: {ratings}</p>
             </div>                    
             <div class={`card-footer bg-${bgColor} rounded-2 mt-2`}> 
                 <Popup trigger=
@@ -66,7 +60,7 @@ const DrCard = ({pixsrc=fmPrf, drname="Dr James Gian" , specialty="Dentist" , no
                                 <h5 class="card-title text-center fs-6 my-0 pt-1 pb-0 fw-bold ">{drname}</h5>
                                 <p class="card-text lead fs-6 text-center">{specialty}</p>
                                 <p class="card-text text-center mb-0 pb-0">{noexp} years experience</p>
-                                <p class="card-text text-center my-0 py-0 ">Ratings: {ratings}</p>
+                                <p class="card-text text-center my-0 py-0 fs-6 ">Ratings: {ratings}</p>
                             </div>
                             {
                                 !appointments?.length?

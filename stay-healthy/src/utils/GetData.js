@@ -25,15 +25,21 @@ const dataTest = [
     "speciality": "Dentist"
     },]
 
+
+const initSpeciality = [
+'Dentist', 'Gynecologist/obstetrician', 'General Physician', 'Dermatologist', 'Ear-nose-throat (ent) Specialist', 'Homeopath', 'Ayurveda'
+]
+
+
 const dataProfilePics = [mPrf, fmPrf]
 const GetData = async (searchedDoctorsSpecialty) => {
     const response = await fetch ("https://api.npoint.io/9a5543d36f1460da2f63")
-    const doctorsDetails = await response.json();
-    const doctorsInSpecialty = await doctorsDetails.filter((docDetail) => docDetail.speciality == searchedDoctorsSpecialty);
-    return doctorsInSpecialty
+    const doctorsDetails = await response.json()    
+    const doctorsInSpecialty =  doctorsDetails.filter((docDetail) => docDetail.speciality == searchedDoctorsSpecialty);
+    return  doctorsInSpecialty
 }
 
 
 
 export default GetData;
-export {dataTest, dataProfilePics};
+export {dataTest, dataProfilePics, initSpeciality};
