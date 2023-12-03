@@ -6,7 +6,7 @@ import {initSpeciality} from '../../utils/GetData';
 
 const FindDoctorSearch = () => {
     const navigate = useNavigate()
-    const [specialities, setSpecialities] = useState(initSpeciality);
+    const [specialities] = useState(initSpeciality);
     const [listDoctorsHidden, setListDoctorsHidden] = useState(true);
     const [searchDoctor, setSearchDoctor] = useState('');
     const handleDoctorSelect=(eventSpecialtySearched) => {

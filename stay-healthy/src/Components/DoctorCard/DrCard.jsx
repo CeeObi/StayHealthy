@@ -44,8 +44,8 @@ const DrCard = ({pixsrc=fmPrf, drname="Dr James Gian" , specialty="Dentist" , no
                 {
                     <div className='navblinks border rounded shadow m-1' onClick={()=>setShowModal(true)}>
                         {   
-                            !appointments?.
-                            length?<h6 class="text-center fw-bold text-white mt-2 mb-0 pb-0 ">Book Appointment</h6>
+                            !appointments?.length
+                            ?<h6 class="text-center fw-bold text-white mt-2 mb-0 pb-0 ">Book Appointment</h6>
                             :<h6 class="text-center fw-bold text-white mt-2 mb-0 pb-0 ">Cancel Appointments</h6>
                         }
                         <h6 class="text-center fs-6 lead text-white mb-2 mt-0 pt-0">No Booking Fees</h6>

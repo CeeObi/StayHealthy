@@ -1,4 +1,3 @@
-import React from 'react'
 import fmPrf from "./docprofilefml.svg";
 import mPrf from "./docprofileml.svg";
  
@@ -35,7 +34,7 @@ const dataProfilePics = [mPrf, fmPrf]
 const GetData = async (searchedDoctorsSpecialty) => {
     const response = await fetch ("https://api.npoint.io/9a5543d36f1460da2f63")
     const doctorsDetails = await response.json()    
-    const doctorsInSpecialty =  doctorsDetails.filter((docDetail) => docDetail.speciality == searchedDoctorsSpecialty);
+    const doctorsInSpecialty =  doctorsDetails.filter((docDetail) => docDetail.speciality === searchedDoctorsSpecialty);
     return  doctorsInSpecialty
 }
 

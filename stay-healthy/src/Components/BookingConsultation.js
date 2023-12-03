@@ -1,8 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 import DrCard from "./DoctorCard/DrCard";
 import FindDoctorSearch from "./FindDoctorSearch/FindDoctorSearch";
-import fmPrf from "../utils/docprofilefml.svg";
-import mPrf from "../utils/docprofileml.svg";
 import React, { useEffect, useState } from 'react'
 import GetData, { dataTest, dataProfilePics } from "../utils/GetData";
 
