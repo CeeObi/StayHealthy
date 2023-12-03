@@ -10,11 +10,7 @@ import FindDoctorSearchIC from './Components/InstantConsultationBooking/FindDoct
 import BookingConsultation from './Components/BookingConsultation';
 
 
-
-
-
 function App() {
-
   return (
     <div>
         <BrowserRouter>
@@ -26,8 +22,7 @@ function App() {
                 <Route path="/instant-consultation" element={<InstantConsultation/>}/>                
                 <Route path="/findadoctor" element={<FindDoctorSearchIC/>}/>                
                 <Route path="/booking-consultation" element={<BookingConsultation/>}/>
-            </Routes>
-            
+            </Routes>            
         </BrowserRouter>
        
     </div>

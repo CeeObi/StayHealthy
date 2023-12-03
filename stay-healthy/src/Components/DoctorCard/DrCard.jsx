@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import AppointmentForm from '../AppointmentForm/AppointmentForm';
-import fmPrf from "../FindDoctorSearch/docprofilefml.svg";
+import fmPrf from "../../utils/docprofilefml.svg";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { v4 as uuidv4 } from 'uuid';
 
 
 
-const DrCard = ({pixsrc=fmPrf, drname="Dr James Gian" , specialty="Dentist" , noexp="23",}) => {
+const DrCard = ({pixsrc=fmPrf, drname="Dr James Gian" , specialty="Dentist" , noexp="23",ratings="⭐⭐"}) => {
     const [showModal,setShowModal] = useState(false);
     const [appointments, setAppointments] = useState([]);
     const [bgColor,setBgColor] = useState("primary");    
@@ -66,13 +66,7 @@ const DrCard = ({pixsrc=fmPrf, drname="Dr James Gian" , specialty="Dentist" , no
                                 <h5 class="card-title text-center fs-6 my-0 pt-1 pb-0 fw-bold ">{drname}</h5>
                                 <p class="card-text lead fs-6 text-center">{specialty}</p>
                                 <p class="card-text text-center mb-0 pb-0">{noexp} years experience</p>
-                                <p class="card-text text-center my-0 py-0 ">Ratings: 
-                                    <i class="fa fa-star ms-1 text-warning" aria-hidden="true"/>
-                                    <i class="fa fa-star ms-1 text-warning" aria-hidden="true"/>
-                                    <i class="fa fa-star ms-1 text-warning" aria-hidden="true"/>
-                                    <i class="fa fa-star ms-1 text-warning" aria-hidden="true"/>
-                                    <i class="fa fa-star ms-1 text-warning opacity-50" aria-hidden="true"/>
-                                </p>
+                                <p class="card-text text-center my-0 py-0 ">Ratings: {ratings}</p>
                             </div>
                             {
                                 !appointments?.length?
