@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 
-const GiveReviews = () => {
+const GiveReviews = ({handleReviewSubmit}) => {
   const [showForm, setShowForm] = useState(false);
   const [submittedMessage, setSubmittedMessage] = useState('');
   const [showWarning, setShowWarning] = useState(false);
@@ -13,12 +13,12 @@ const GiveReviews = () => {
     setShowForm(true);
   };
 
-
-  const handleSubmit = (e) => {
-    e.preventDefault();   
+  const handleGiveReview= (event)=>{
+    event.preventDefault();   
     if (name.length && review.length && rating.length > 0) {
         setShowWarning(false);
         setSubmittedMessage(review);  
+        return handleReviewSubmit(event)
     } else {
         setShowWarning(true);
     }
@@ -33,7 +33,7 @@ const GiveReviews = () => {
       {!showForm ? (
         <button onClick={handleButtonClick}>Open Form</button>
       ) : (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleGiveReview} method='POST'>
                 <h2>Give Your Feedback</h2>
                 {showWarning && <p className="text-warning fs-3">Please fill out all fields.</p>}
                 <div className=''>
@@ -46,16 +46,17 @@ const GiveReviews = () => {
                 </div>
                 <div>
                     <label htmlFor="rating">Rating:</label>
-                    <select id='rating' class="form-select form-control" aria-label="Default select example" onChange={(e)=>setRating(e.target.value)}>
+                    <select defaultValue="⭐" id='rating' class="form-select form-control" aria-label="Default select example" onChange={(e)=>setRating(e.target.value)}>
                         {/* <option selected>Please select rating</option> */}
-                        <option selected value="⭐">⭐</option>
+                        <option value="⭐">⭐</option>
                         <option value="⭐⭐">⭐⭐</option>
                         <option value="⭐⭐⭐">⭐⭐⭐</option>
                         <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
                         <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
                     </select>
                 </div>
-                <button type="submit">Submit</button>
+                
+                <input className="btn btn-primary w-100 rounded-0 mb-3 btn-lg mt-3 navblinks" type="submit" value="Submit"/> 
         </form>
       )}
       {submittedMessage && (

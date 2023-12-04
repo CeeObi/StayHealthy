@@ -4,7 +4,24 @@ import Popup from 'reactjs-popup';
 
 
 const ReviewForm = () => {
-const [showModal,setShowModal] = useState(false);
+    const [showModal,setShowModal] = useState(false);
+
+    
+  const handleReviewSubmit = (eventReviewData) => {
+    console.log(eventReviewData.target)
+    eventReviewData.preventDefault();   //SSTTTTTTTTTTTTTOOOOOOOOPPPPPPPPPED HERE
+    // if (name.length && review.length && rating.length > 0) {
+    //     setShowWarning(false);
+    //     setSubmittedMessage(review); 
+    // } else {
+    //     setShowWarning(true);
+    // }
+    // setName('');
+    // setReview('');
+    // setRating('⭐');
+  };
+
+
 
 
   return (<>
@@ -32,7 +49,7 @@ const [showModal,setShowModal] = useState(false);
                 } position="center" modal open={showModal} onClose={() => setShowModal(false)}>
                     {(close) => (
                         <div className="doctorbg" style={{ height: '80vh', overflow: 'scroll' }}>
-                            <GiveReviews />
+                            <GiveReviews handleReviewSubmit={handleReviewSubmit} />
                            
                             
                         </div>
