@@ -1,34 +1,65 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import AppointmentForm from '../AppointmentForm/AppointmentForm';
 import fmPrf from "../../utils/docprofilefml.svg";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { v4 as uuidv4 } from 'uuid';
 
+const getStorageDoctorData = (drname) =>{
+// const storedDoctorData = JSON.parse(localStorage.getItem('bookedAppointments')) ?? null;
+const storedDoctorData = JSON.parse(localStorage.getItem('doctorData'));
+if (storedDoctorData){
+    if (storedDoctorData.drname === drname)
+        return [storedDoctorData]
+    // console.log(storedDoctorData.drname)
+    // storedDoctorData
 
+        // var stordAppt = storedDoctorData.filter((apptData) => apptData.drname===drname)
+        // if (stordAppt.length === 1){    
+        //     return stordAppt
+        // }
+}
+else {return []}
+}
 
 const DrCard = ({pixsrc=fmPrf, drname="Dr James Gian" , specialty="Dentist" , noexp="23",ratings}) => {
+    
+    
     const [showModal,setShowModal] = useState(false);
-    const [appointments, setAppointments] = useState([]);
-    const [bgColor,setBgColor] = useState("primary");    
+    const [appointments, setAppointments] = useState(getStorageDoctorData(drname));
+    const [bgColor,setBgColor] = useState(!appointments?.length?"primary":"danger");
+
+    
+        
     const handleBooking = (appointmentEventData) =>{
-        const aptId= uuidv4();
-        const newAppointment = {id:aptId,...appointmentEventData}
+        const aptId= uuidv4();                
+        const {name,phone,date,time} = appointmentEventData.target
+        const newAppointment = {id:aptId,drpix:pixsrc, drname:drname,noexp:noexp, ratings:ratings, specialty:specialty, name:name.value,phone:phone.value,date:date.value,time:time.value}
+        localStorage.setItem('doctorData',JSON.stringify(newAppointment))
         setShowModal(false)
         setBgColor("danger")
-        const updatedAppointment =[...appointments,newAppointment]
+        const updatedAppointment =[...appointments,newAppointment]        
         setAppointments(updatedAppointment)
+        window.location.reload()       
     }
+    // useEffect(() =>{
+
+    // },[appointments]
+    // )
+
+
     const handleCancelAppointment = (canceAppointmentEventData) => {
         const cancelId = canceAppointmentEventData.target.id;
         setBgColor("primary")
         const updatedAppointment = appointments.filter((eachAppointment) => eachAppointment.id !== cancelId )
         setAppointments(updatedAppointment)
+        localStorage.removeItem('doctorData')
         setShowModal(false)
+        window.location.reload()
     }    
 
   return (
-    <div key="" class="col col-10 mt-3 mx-auto">
+    <div  class="col col-10 mt-3 mx-auto">
         <div class="mx-auto card " style={{width:"100%"}}>
             <div className='mx-auto col-4 col-sm-5 col-md-5 col-lg-6 mt-2 d-flex justify-content-center mb-0'>
                 <img src={pixsrc} class="card-img-top img-thumbnail mb-0 pb-0 rounded-circle border-primary" alt="..." style={{width:"100%"}}/>
@@ -70,12 +101,12 @@ const DrCard = ({pixsrc=fmPrf, drname="Dr James Gian" , specialty="Dentist" , no
                                         <h2 className='text-center'>Appointment Booked!</h2> 
                                         {
                                             appointments.map((eachApptment) => { 
-                                                const {name, time, phone, date} = eachApptment.target;
+                                                const {name, time, phone, date} = eachApptment;
                                            return <div key={eachApptment.id} className='border py-2 px-3 rounded'>                                                
-                                                <h4>Name: <em>{name.value}</em> </h4> 
-                                                <h4>Phone number: <em>{phone.value}</em> </h4>
-                                                <h4>Time: <em>{time.value}</em> </h4>
-                                                <h4>Date: <em>{date.value}</em> </h4>
+                                                <h4>Name: <em>{name}</em> </h4> 
+                                                <h4>Phone number: <em>{phone}</em> </h4>
+                                                <h4>Time: <em>{time}</em> </h4>
+                                                <h4>Date: <em>{date}</em> </h4>
                                                 <button id={eachApptment.id} onClick={handleCancelAppointment} className={`btn mt-4 btn-${bgColor} btn-lg rounded-2 navblinks`}>  
                                                     Cancel Appointment
                                                 </button>
