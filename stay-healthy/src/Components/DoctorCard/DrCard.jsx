@@ -29,12 +29,12 @@ const DrCard = ({pixsrc=fmPrf, drname="Dr James Gian" , specialty="Dentist" , no
     const [appointments, setAppointments] = useState(getStorageDoctorData(drname));
     const [bgColor,setBgColor] = useState(!appointments?.length?"primary":"danger");
 
-    
+    const srcPix = !appointments?.length?pixsrc:appointments[0].drpix;
         
     const handleBooking = (appointmentEventData) =>{
         const aptId= uuidv4();                
         const {name,phone,date,time} = appointmentEventData.target
-        const newAppointment = {id:aptId,drpix:pixsrc, drname:drname,noexp:noexp, ratings:ratings, specialty:specialty, name:name.value,phone:phone.value,date:date.value,time:time.value}
+        const newAppointment = {id:aptId,drpix:srcPix, drname:drname,noexp:noexp, ratings:ratings, specialty:specialty, name:name.value,phone:phone.value,date:date.value,time:time.value}
         localStorage.setItem('doctorData',JSON.stringify(newAppointment))
         setShowModal(false)
         setBgColor("danger")
@@ -62,7 +62,7 @@ const DrCard = ({pixsrc=fmPrf, drname="Dr James Gian" , specialty="Dentist" , no
     <div  class="col col-10 mt-3 mx-auto">
         <div class="mx-auto card " style={{width:"100%"}}>
             <div className='mx-auto col-4 col-sm-5 col-md-5 col-lg-6 mt-2 d-flex justify-content-center mb-0'>
-                <img src={pixsrc} class="card-img-top img-thumbnail mb-0 pb-0 rounded-circle border-primary" alt="..." style={{width:"100%"}}/>
+                <img src={srcPix} class="card-img-top img-thumbnail mb-0 pb-0 rounded-circle border-primary" alt="..." style={{width:"100%"}}/>
             </div>
             <div class="card-body mt-0 pt-1 pb-0 mb-0 ">
                 <h5 class="card-title text-center fs-6 my-0 pt-1 pb-0 fw-bold ">{drname}</h5>
@@ -85,7 +85,7 @@ const DrCard = ({pixsrc=fmPrf, drname="Dr James Gian" , specialty="Dentist" , no
                     {(close) => (
                         <div className="doctorbg" style={{ height: '100vh', overflow: 'scroll' }}>
                             <div className='mx-auto w-50 mt-2 d-flex justify-content-center mb-0'>
-                                <img src={pixsrc} class="card-img-top img-thumbnail mb-0 pb-0 rounded-circle border-primary" alt="..." style={{width:"50%"}}/>
+                                <img src={srcPix} class="card-img-top img-thumbnail mb-0 pb-0 rounded-circle border-primary" alt="..." style={{width:"50%"}}/>
                             </div>
                             <div class="card-body mt-0 pt-1 pb-0 mb-0 ">
                                 <h5 class="card-title text-center fs-6 my-0 pt-1 pb-0 fw-bold ">{drname}</h5>

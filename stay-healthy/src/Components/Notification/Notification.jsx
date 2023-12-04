@@ -42,13 +42,6 @@ const Notification = ({ children }) => {
                     <strong>Patient Name: </strong> {doctorData?.name}              
                 </p>
             <div className="card-body mx-auto">
-                {/* <p className="card-group">
-                    <strong>Doctor: </strong> <> {" " + doctorData?.drname}</>                
-                </p>
-                <p className="card-group">
-                    <strong>Specialty: </strong> {doctorData?.specialty}               
-                </p> */}
-                
                 <p className="card-group">
                     <strong>Patient Mobile:</strong> {doctorData?.phone}             
                 </p>
@@ -70,8 +63,6 @@ const Notification = ({ children }) => {
     </div>
   );
 };
-
-
 
 
 
