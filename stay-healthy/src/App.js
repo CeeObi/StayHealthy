@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from './Components/Navbar/Navbar';
 import Login from './Components/Login/Login';
 import LandingPage from './Components/Landing_Page/Landing_Page';
 import SignUp from './Components/Sign_Up/Sign_Up';
@@ -9,7 +8,7 @@ import FindDoctorSearchIC from './Components/InstantConsultationBooking/FindDoct
 import BookingConsultation from './Components/BookingConsultation';
 import Notification from './Components/Notification/Notification';
 import ReviewForm from './Components/ReviewForm/ReviewForm';
-import GiveReviews from './Components/ReviewForm/GiveReviews';
+import GiveReviews from './Components/ReviewForm/GiveReview/GiveReviews';
 
 
 

@@ -25,7 +25,7 @@ const Navbar = () => {
                 </div>
                 <div className="d-flex">
                     <NavLink to="/" className=" fw-normal fs-6 mx-3 navblinks  ">Home</NavLink>                
-                    <NavLink to="/instant-consultation" className=" fw-normal fs-6 mx-3 navblinks ">Appointments</NavLink>
+                    <NavLink to="/booking-consultation" className=" fw-normal fs-6 mx-3 navblinks ">Appointments</NavLink>
                     <NavLink to="/" className=" fw-normal fs-6 mx-3 navblinks ">Health Blog</NavLink>
                     <NavLink to="/" className=" fw-normal fs-6 mx-3 navblinks ">Reviews</NavLink>                
                 </div>

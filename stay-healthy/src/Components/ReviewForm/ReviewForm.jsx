@@ -1,21 +1,26 @@
-import React, { useState } from 'react'
-import GiveReviews from './GiveReviews';
-import Popup from 'reactjs-popup';
+import React, { useState } from 'react';
+import TableRow from './TableRow/TableRow';
+import { v4 as uuidv4 } from 'uuid';
 
 
-const ReviewForm = () => {
-    const [showModal,setShowModal] = useState(false);
-    const [ratingMessage,setRatingMessage] = useState({})
-    const [disableReview,setDisableReview] = useState(false)
-    const handleReviewSubmit = (eventReviewData) => {
-        const {name,review,rating} = eventReviewData.target
-        setRatingMessage({review:review.value, rating:rating.value})
-        setDisableReview(true)
-        eventReviewData.preventDefault();
-    };
-    return (<>
+const ReviewForm = ({avalableDocs}) => {
+    const noOfDocs=avalableDocs;
+    // const [ratingMessage,setRatingMessage] = useState({})
+    // const [disableReview,setDisableReview] = useState(false)
+    // const handleReviewSubmit = (eventReviewData) => {
+    //     // const {name,review,rating} = eventReviewData.target
+    //     const {review,rating} = eventReviewData.target
+    //     setRatingMessage({review:review.value, rating:rating.value})
+    //     setDisableReview(true)
+    //     eventReviewData.preventDefault();
+    // };
+
+    
+
+    return (
+    <div className='col-10 mx-auto mb-5'>
+    <hr className='rounded'/>
         <h1 className='m-5'>Reviews</h1>
-
         <div className='mx-5'>
             <table className='table table-hover'>
                 <thead className='fs-5 fw-bold bg-light text-center'>
@@ -28,36 +33,20 @@ const ReviewForm = () => {
                         <td>Rating</td>
                     </tr>
                 </thead>        
-                <tbody className='mx-5 '>
-                        <tr className=''>
-                            <td className='text-center pt-3'>1</td>
-                            <td className='text-center  pt-3'>Dr Liz</td>
-                            <td className='text-center  pt-3'>Dentist</td>
-                            
-                        {disableReview?
-                            <td className='my-auto text-wrap text-center '><div className=' btn btn-primary disabled px-5' >CLICK HERE</div></td>
-                        :
-                            <Popup trigger=
-                            {
-                                <td className='my-auto text-wrap text-center '><div className=' btn btn-primary px-5' onClick={()=>setShowModal(true)}>CLICK HERE</div></td>
-                            } position="center" modal open={showModal} onClose={() => setShowModal(false)}>
-                                {(close) => (
-                                    <div className="" style={{ height: '65vh', overflow: 'scroll',backgroundColor: "#e8eef6" }}>
-                                        <GiveReviews handleReviewSubmit={handleReviewSubmit} />
-                                    
-                                        
-                                    </div>
-                                )}
-                            </Popup>
-                        }
-                        <td className='text-center px-1  pt-3'>{ratingMessage.review}</td>
-                        <td className='text-center px-1  pt-3 pt-3'>{ratingMessage.rating}</td>
-                        </tr>
+                <tbody className='mx-5 '>   
+                    {                   
+                        noOfDocs.map((drAvailable,indx) =>{
+                            const aptId= uuidv4(); 
+                            const index=indx+1     
+                            const {name,speciality} = drAvailable; 
 
+                            return <TableRow key={aptId} sn={index} docsName={name} docsSpecs={speciality}  />
+                        })
+                    }
                 </tbody>
             </table>
         </div>
-</>
+</div>
   )
 }
 

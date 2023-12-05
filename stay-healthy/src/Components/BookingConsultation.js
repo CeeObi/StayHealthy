@@ -3,6 +3,7 @@ import DrCard from "./DoctorCard/DrCard";
 import FindDoctorSearch from "./FindDoctorSearch/FindDoctorSearch";
 import React, { useEffect, useState } from 'react'
 import GetData, { dataTest, dataProfilePics } from "../utils/GetData";
+import ReviewForm from "./ReviewForm/ReviewForm";
 
 
 const BookingConsultation = () => {
@@ -43,6 +44,8 @@ const BookingConsultation = () => {
         }                                            
         </div>
     </div>
+    {availableDoctors.length ? <ReviewForm avalableDocs={availableDoctors} /> : null }
+        
     </>
   )
 }

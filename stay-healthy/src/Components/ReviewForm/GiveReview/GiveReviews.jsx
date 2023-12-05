@@ -38,16 +38,16 @@ const GiveReviews = ({handleReviewSubmit}) => {
                 <h2 className='text-center'>Provide Your Feedback</h2>
                 {showWarning && <p className="text-warning fs-3">Please fill out all fields.</p>}
                 <div className=''>
-                    <label htmlFor="name">Name:</label>
-                    <input className='form-control' type="text" id="name" name="name" value={name} onChange={(e)=>{setName(e.target.value)}} />
+                    <label htmlFor="name mb-0 pb-0">Name:</label>
+                    <input className='form-control mt-0 pt-0' type="text" id="name" name="name" value={name} onChange={(e)=>{setName(e.target.value)}} />
                 </div>
-                <div className=''>
-                    <label htmlFor="review">Review:</label>
-                    <textarea rows="3" className='form-control' id="review" name="review" value={review} onChange={(e)=>setReview(e.target.value)} />
+                <div className='mt-2 '>
+                    <label htmlFor="review mb-0 pb-0">Review:</label>
+                    <textarea rows="3" className='form-control mt-0 pt-0' id="review" name="review" value={review} onChange={(e)=>setReview(e.target.value)} />
                 </div>
-                <div>
-                    <label htmlFor="rating">Rating:</label>
-                    <select defaultValue="⭐" id='rating' class="form-select form-control" aria-label="Default select example" onChange={(e)=>setRating(e.target.value)}>
+                <div className='mt-2'>
+                    <label htmlFor="rating mb-0 pb-0">Rating:</label>
+                    <select defaultValue="⭐" id='rating' class="form-select form-control mt-0 pt-0" aria-label="Default select example" onChange={(e)=>setRating(e.target.value)}>
                         {/* <option selected>Please select rating</option> */}
                         <option value="⭐">⭐</option>
                         <option value="⭐⭐">⭐⭐</option>
@@ -57,7 +57,7 @@ const GiveReviews = ({handleReviewSubmit}) => {
                     </select>
                 </div>
                 
-                <input className="btn btn-primary w-100 rounded-0 mb-3 btn-lg mt-3 navblinks" type="submit" value="Submit"/> 
+                <input className="btn btn-outline-primary w-100 rounded-2 mb-3 btn-lg mt-3 navblinks" type="submit" value="Submit"/> 
         </form>
       )}
       {submittedMessage && (
