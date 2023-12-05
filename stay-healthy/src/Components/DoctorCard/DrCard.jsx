@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import AppointmentForm from '../AppointmentForm/AppointmentForm';
 import fmPrf from "../../utils/docprofilefml.svg";
 import Popup from 'reactjs-popup';
@@ -23,14 +23,10 @@ else {return []}
 }
 
 const DrCard = ({pixsrc=fmPrf, drname="Dr James Gian" , specialty="Dentist" , noexp="23",ratings}) => {
-    
-    
     const [showModal,setShowModal] = useState(false);
     const [appointments, setAppointments] = useState(getStorageDoctorData(drname));
     const [bgColor,setBgColor] = useState(!appointments?.length?"primary":"danger");
-
-    const srcPix = !appointments?.length?pixsrc:appointments[0].drpix;
-        
+    const srcPix = !appointments?.length?pixsrc:appointments[0].drpix;        
     const handleBooking = (appointmentEventData) =>{
         const aptId= uuidv4();                
         const {name,phone,date,time} = appointmentEventData.target
@@ -42,12 +38,6 @@ const DrCard = ({pixsrc=fmPrf, drname="Dr James Gian" , specialty="Dentist" , no
         setAppointments(updatedAppointment)
         window.location.reload()       
     }
-    // useEffect(() =>{
-
-    // },[appointments]
-    // )
-
-
     const handleCancelAppointment = (canceAppointmentEventData) => {
         const cancelId = canceAppointmentEventData.target.id;
         setBgColor("primary")

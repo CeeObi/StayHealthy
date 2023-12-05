@@ -1,5 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
+import ProfileCard from '../ProfileCard/ProfileCard';
+
 
 const getEmailFromSessionStorage = () => {
     return sessionStorage.getItem("email") || null;//"John@gmail.com";
@@ -30,10 +32,17 @@ const Navbar = () => {
                     <NavLink to="/" className=" fw-normal fs-6 mx-3 navblinks ">Reviews</NavLink>                
                 </div>
                 <div className="d-flex">
+                    
+                
+                    
                     {
-                        usersName 
-                        ? 
-                        <div className="align-self-center mx-3 text-capitalize">Welcome, {usersName}</div>                    
+                        usersName ? 
+                        <>
+                            <div className="align-self-center mx-3 text-capitalize"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome, {usersName}</div>                
+                            <div class="dropdown-menu dropdown-menu-right p-0" style={{width:"350px"}}>
+                                <ProfileCard />
+                            </div>
+                        </>                    
                         :
                         <NavLink to="/register" className="btn btn-primary me-3 px-4 shadow rounded-pill nav-butn">Sign Up</NavLink> 
                     }
