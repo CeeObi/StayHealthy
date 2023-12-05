@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import findDoctor from "../../utils/finddoc.svg";
+import findDoctor from "../../utils/public/finddoc.svg";
 import { useNavigate } from 'react-router-dom';
 import {initSpeciality} from '../../utils/GetData';
 

@@ -26,8 +26,6 @@ function App() {
                   <Route path="/findadoctor" element={<FindDoctorSearchIC/>}/>                
                   <Route path="/booking-consultation" element={<BookingConsultation/>}/>
                   <Route path="/reports" element={<ReportsLayout/>}/>
-                  
-                  
               </Routes>   
             </Notification>         
         </BrowserRouter>

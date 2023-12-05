@@ -1,5 +1,5 @@
-import fmPrf from "./docprofilefml.svg";
-import mPrf from "./docprofileml.svg";
+import fmPrf from "./public/docprofilefml.svg";
+import mPrf from "./public/docprofileml.svg";
  
 
 

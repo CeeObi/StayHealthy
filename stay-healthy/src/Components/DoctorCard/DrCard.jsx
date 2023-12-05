@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import AppointmentForm from '../AppointmentForm/AppointmentForm';
-import fmPrf from "../../utils/docprofilefml.svg";
+import fmPrf from "../../utils/public/docprofilefml.svg";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { v4 as uuidv4 } from 'uuid';
