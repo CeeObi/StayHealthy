@@ -28,12 +28,12 @@ const ProfileCard = () => {
                 <div className='  d-flex m-1 border border-end align-items-center rounded-0 rounded-top'>                    
                         <img src={dataProfilePics[0]} class=" m-3 img-thumbnail rounded-circle border-primary" alt="..." style={{width:"30%"}}/>                                         
                         <div class=" card-body mt-0  border-start ">                    
-                            <h5 class="card-title text-center fs-5 fw-bold ">Welcome, {pname}</h5>
-                            <p class="card-text mt-3 lead fs-5 text-center">Patient Profile</p>                    
+                            <h5 class="card-title text-center fs-5 fw-bold ">Welcome{pname&&`, ${pname}`}</h5>
+                            {pname&&<p class="card-text mt-3 lead fs-5 text-center">Patient Profile</p>}
                         </div>       
                 </div> 
             </div>
-            <div className='fs-5 mx text-center mt-2'>Phone Number: <strong>{pphone}</strong></div>
+            {pname&&<div className='fs-5 mx text-center mt-2'>Phone Number: <strong>{pphone}</strong></div>}
             <div className='fs-5 mx text-center mt-2'>Email: <strong>{pemail}</strong></div> 
         </>
       }

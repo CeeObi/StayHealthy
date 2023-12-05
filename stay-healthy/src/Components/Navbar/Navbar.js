@@ -30,15 +30,8 @@ const Navbar = () => {
                     <NavLink to="/booking-consultation" className=" fw-normal fs-6 mx-3 navblinks ">Appointments</NavLink>
                     <NavLink to="/" className=" fw-normal fs-6 mx-3 navblinks ">Health Blog</NavLink>
                     <NavLink to="/" className=" fw-normal fs-6 mx-3 navblinks ">Reviews</NavLink>  
-                    <div className="align-self-center mx-3 text-capitalize"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome, John</div>                
-                            <div class="dropdown-menu mt-2 p-0" style={{width:"350px"}}>
-                                <ProfileCard />
-                            </div>              
                 </div>
                 <div className="d-flex">
-                    
-                
-                    
                     {
                         usersName ? 
                         <>

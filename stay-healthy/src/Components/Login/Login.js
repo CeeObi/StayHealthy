@@ -18,7 +18,7 @@ const Login = () => {
     }
   }, []);
 
-  const login = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     const res = await fetch(`${API_URL}/api/auth/login`, {
       method: "POST",
@@ -34,11 +34,12 @@ const Login = () => {
     
     const json = await res.json();
     if (json.authtoken) {
-      sessionStorage.setItem('auth-token', json.authtoken);
-  
+      sessionStorage.setItem('auth-token', json.authtoken);        
       sessionStorage.setItem('email', email);
       navigate('/');
       window.location.reload()
+      console.log(json)
+
     } else {
       if (json.error) {        
         for (const error of json.error) {
@@ -61,7 +62,7 @@ const Login = () => {
                 <p className="text-center">
                     Are you a new member? <Link to="/register" className="text-capitalize text-decoration-none text-primary"> Sign Up Here</Link>
                 </p>
-                <form method="POST" className="mx-auto w-100" onSubmit={login}>            
+                <form method="POST" className="mx-auto w-100" onSubmit={handleLogin}>            
                     <div className="form-group mb-3">   
                         <div>
                             <label htmlFor="emailinput">

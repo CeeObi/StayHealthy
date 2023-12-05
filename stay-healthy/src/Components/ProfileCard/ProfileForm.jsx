@@ -9,14 +9,15 @@ const ProfileForm = ({hideProfile}) => {
     const [editMode, setEditMode] = useState(false);
     const navigate = useNavigate();
 
-    // useEffect(() => {
-    //     const authtoken = sessionStorage.getItem("auth-token");
-    //     if (!authtoken) {
-    //     navigate("/login");
-    //     } else {
-    //     fetchUserProfile();
-    //     }
-    // }, [navigate]);
+    useEffect(() => {
+        const authtoken = sessionStorage.getItem("auth-token");
+        if (!authtoken) {
+        navigate("/login");
+        } else {
+        fetchUserProfile();        
+        }
+    }, [navigate]);
+
 
 
     const fetchUserProfile = async () => {
@@ -36,11 +37,11 @@ const ProfileForm = ({hideProfile}) => {
         });
         if (response.ok) {
             const user = await response.json();
-                sessionStorage.setItem("name", user.name);
-                sessionStorage.setItem("phone", user.phone);
-                sessionStorage.setItem("email", user.email);
+            sessionStorage.setItem("name", user.name);
+            sessionStorage.setItem("phone", user.phone);
+            sessionStorage.setItem("email", user.email);
             setUserDetails(user);
-            setUpdatedDetails(user);
+            setUpdatedDetails(user);            
         } 
         else {
             // Handle error case
@@ -54,9 +55,11 @@ const ProfileForm = ({hideProfile}) => {
     };
 
 
-    const handleEdit = () => {
+    const handleEdit = (e) => {
+        e.preventDefault();
         setEditMode(true);
         hideProfile(true)
+        e.stopPropagation();
     };
 
     const handleInputChange = (e) => {
@@ -94,6 +97,7 @@ const ProfileForm = ({hideProfile}) => {
                 // Display success message to the user
                 alert(`Profile Updated Successfully!`);
                 navigate("/");
+                window.location.reload()
             } else {
                 // Handle error case
                 throw new Error("Failed to update profile");
@@ -116,7 +120,7 @@ return (
                             <span className=" text-capitalize">Email</span>
                         </label>
                     </div>             
-                    <input onChange={handleInputChange} id="email" name="email" type="email" className="form-control" value={userDetails.email}/>
+                    <input onChange={handleInputChange} id="email" name="email" type="email" className="form-control" defaultValue={userDetails.email}/>
                 </div>
                 <div className="form-group mb-3">   
                     <div>
@@ -124,7 +128,7 @@ return (
                             <span className=" text-capitalize">Phone</span>
                         </label>
                     </div>             
-                    <input onChange={handleInputChange} id="phone" name="phone" type="tel" className="form-control" value={userDetails.phone} />
+                    <input onChange={handleInputChange} id="phone" name="phone" type="tel" className="form-control" defaultValue={userDetails.phone} />
                 </div>
                 <div className="form-group mb-3">   
                     <div>
@@ -132,7 +136,7 @@ return (
                             <span className=" text-capitalize">Name</span>
                         </label>
                     </div>             
-                    <input onChange={handleInputChange} id="name" name="name" type="text" className="form-control" value={userDetails.name} />
+                    <input onChange={handleInputChange} id="name" name="name" type="text" className="form-control" defaultValue={userDetails.name} />
                 </div>
                 <button type="submit">Save</button>
             </form>
