@@ -18,7 +18,7 @@ const GiveReviews = ({handleReviewSubmit}) => {
     if (name.length && review.length && rating.length > 0) {
         setShowWarning(false);
         setSubmittedMessage(review);  
-        return handleReviewSubmit(event)
+        handleReviewSubmit(event)
     } else {
         setShowWarning(true);
     }
@@ -29,12 +29,13 @@ const GiveReviews = ({handleReviewSubmit}) => {
 
   return (
     <div className='p-4'>
-      <h2>Form with Message</h2>
-      {!showForm ? (
-        <button onClick={handleButtonClick}>Open Form</button>
+      
+      {!showForm ? (<>
+        <h2 className='text-center'>Please Complete Review Form</h2>
+        <button onClick={handleButtonClick}>Open Form</button></>
       ) : (
         <form onSubmit={handleGiveReview} method='POST'>
-                <h2>Give Your Feedback</h2>
+                <h2 className='text-center'>Provide Your Feedback</h2>
                 {showWarning && <p className="text-warning fs-3">Please fill out all fields.</p>}
                 <div className=''>
                     <label htmlFor="name">Name:</label>
