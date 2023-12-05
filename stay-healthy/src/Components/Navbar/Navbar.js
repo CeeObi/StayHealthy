@@ -32,11 +32,13 @@ const Navbar = () => {
                     <NavLink to="/" className=" fw-normal fs-6 mx-3 navblinks ">Reviews</NavLink>  
                 </div>
                 <div className="d-flex">
+                
                     {
+                        
                         usersName ? 
                         <>
                             <div className="align-self-center mx-3 text-capitalize"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome, {usersName}</div>                
-                            <div class="dropdown-menu mt-2 p-0" style={{width:"350px"}}>
+                            <div class="dropdown-menu dropdown-menu-right mt-2 p-0" style={{width:"350px"}}>
                                 <ProfileCard />
                             </div>
                         </>                    

@@ -8,6 +8,7 @@ import FindDoctorSearchIC from './Components/InstantConsultationBooking/FindDoct
 import BookingConsultation from './Components/BookingConsultation';
 import Notification from './Components/Notification/Notification';
 import ProfileCard from './Components/ProfileCard/ProfileCard';
+import ReportsLayout from './Components/ReportsLayout/ReportsLayout';
 
 
 
@@ -24,7 +25,7 @@ function App() {
                   <Route path="/instant-consultation" element={<InstantConsultation/>}/>                
                   <Route path="/findadoctor" element={<FindDoctorSearchIC/>}/>                
                   <Route path="/booking-consultation" element={<BookingConsultation/>}/>
-                  <Route path="/profile" element={<ProfileCard/>}/>
+                  <Route path="/reports" element={<ReportsLayout/>}/>
                   
                   
               </Routes>   

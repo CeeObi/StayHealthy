@@ -3,10 +3,13 @@ import { API_URL } from "../../config";
 import { useNavigate } from "react-router-dom";
 
 
-const ProfileForm = ({hideProfile}) => {
+const ProfileForm = ({showPForm}) => {
     const [userDetails, setUserDetails] = useState({});
     const [updatedDetails, setUpdatedDetails] = useState({});
-    const [editMode, setEditMode] = useState(false);
+    // const [userDetails, setUserDetails] = useState({name:"Dima",email:"cee@gmail.com",phone:"859688222"});
+    // const [updatedDetails, setUpdatedDetails] = useState({name:"Dima",email:"cee@gmail.com",phone:"859688222"});
+    
+    const editMode=showPForm;
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -55,12 +58,11 @@ const ProfileForm = ({hideProfile}) => {
     };
 
 
-    const handleEdit = (e) => {
-        e.preventDefault();
-        setEditMode(true);
-        hideProfile(true)
-        e.stopPropagation();
-    };
+    // const handleEdit = (e) => {
+    //     e.preventDefault();
+    //     // setEditMode(true);        
+    //     e.stopPropagation();
+    // };
 
     const handleInputChange = (e) => {
         setUpdatedDetails({
@@ -93,7 +95,7 @@ const ProfileForm = ({hideProfile}) => {
                 sessionStorage.setItem("name", updatedDetails.name);
                 sessionStorage.setItem("phone", updatedDetails.phone);
                 setUserDetails(updatedDetails);
-                setEditMode(false);
+                // setEditMode(false);
                 // Display success message to the user
                 alert(`Profile Updated Successfully!`);
                 navigate("/");
@@ -111,7 +113,7 @@ const ProfileForm = ({hideProfile}) => {
 
 return (
     <div className="profile-container">
-    {editMode ? 
+    {editMode && 
         (<div className="mt-4 p-3">
             <form className="" onSubmit={handleSubmit}>
                 <div className="form-group mb-3">   
@@ -141,13 +143,7 @@ return (
                 <button type="submit">Save</button>
             </form>
         </div>
-        ) : (
-            <div className="profile-details">
-                {/* <h1>Welcome, {userDetails.name}</h1>
-                // implement code to display detail of phone and email like above */}
-                <button onClick={handleEdit}>Edit</button>
-            </div>
-        )
+        ) 
     }
         </div>
     );
