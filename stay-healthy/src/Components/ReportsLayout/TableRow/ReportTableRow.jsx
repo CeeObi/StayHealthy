@@ -3,9 +3,6 @@ import patientReport from "../../../utils/public/patient_report.pdf";
 
 
 const ReportTableRow = ({sn,docsName,docsSpecs}) => {
-    
-    
-
     return (
         <tr className=''>
             <td className='text-center'>{sn}</td>
@@ -16,6 +13,5 @@ const ReportTableRow = ({sn,docsName,docsSpecs}) => {
         </tr>
     )
 }
-
 
 export default ReportTableRow;

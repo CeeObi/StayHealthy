@@ -5,18 +5,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 const ReviewForm = ({avalableDocs}) => {
     const noOfDocs=avalableDocs;
-    // const [ratingMessage,setRatingMessage] = useState({})
-    // const [disableReview,setDisableReview] = useState(false)
-    // const handleReviewSubmit = (eventReviewData) => {
-    //     // const {name,review,rating} = eventReviewData.target
-    //     const {review,rating} = eventReviewData.target
-    //     setRatingMessage({review:review.value, rating:rating.value})
-    //     setDisableReview(true)
-    //     eventReviewData.preventDefault();
-    // };
-
-    
-
     return (
     <div className='col-10 mx-auto mb-5'>
     <hr className='rounded'/>
@@ -49,8 +37,5 @@ const ReviewForm = ({avalableDocs}) => {
 </div>
   )
 }
-
-
-
 
 export default ReviewForm;

@@ -5,10 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const ProfileForm = ({showPForm}) => {
     const [userDetails, setUserDetails] = useState({});
-    const [updatedDetails, setUpdatedDetails] = useState({});
-    // const [userDetails, setUserDetails] = useState({name:"Dima",email:"cee@gmail.com",phone:"859688222"});
-    // const [updatedDetails, setUpdatedDetails] = useState({name:"Dima",email:"cee@gmail.com",phone:"859688222"});
-    
+    const [updatedDetails, setUpdatedDetails] = useState({});    
     const editMode=showPForm;
     const navigate = useNavigate();
 
@@ -20,8 +17,6 @@ const ProfileForm = ({showPForm}) => {
         fetchUserProfile();        
         }
     }, [navigate]);
-
-
 
     const fetchUserProfile = async () => {
     try {
@@ -56,13 +51,6 @@ const ProfileForm = ({showPForm}) => {
         // Handle error case
     }
     };
-
-
-    // const handleEdit = (e) => {
-    //     e.preventDefault();
-    //     // setEditMode(true);        
-    //     e.stopPropagation();
-    // };
 
     const handleInputChange = (e) => {
         setUpdatedDetails({

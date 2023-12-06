@@ -4,13 +4,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import { API_URL } from '../../config';
 
 
-const Login = () => {
-    
+const Login = () => {    
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState('');
   const navigate = useNavigate();
   const [showerr, setShowerr] = useState('');
-
 
   useEffect(() => {
     if (sessionStorage.getItem("auth-token")) {

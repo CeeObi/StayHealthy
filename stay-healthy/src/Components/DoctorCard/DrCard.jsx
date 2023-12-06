@@ -6,18 +6,10 @@ import 'reactjs-popup/dist/index.css';
 import { v4 as uuidv4 } from 'uuid';
 
 const getStorageDoctorData = (drname) =>{
-// const storedDoctorData = JSON.parse(localStorage.getItem('bookedAppointments')) ?? null;
 const storedDoctorData = JSON.parse(localStorage.getItem('doctorData'));
 if (storedDoctorData){
     if (storedDoctorData.drname === drname)
         return [storedDoctorData]
-    // console.log(storedDoctorData.drname)
-    // storedDoctorData
-
-        // var stordAppt = storedDoctorData.filter((apptData) => apptData.drname===drname)
-        // if (stordAppt.length === 1){    
-        //     return stordAppt
-        // }
 }
 else {return []}
 }

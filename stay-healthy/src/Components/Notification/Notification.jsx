@@ -3,7 +3,6 @@ import Navbar from '../Navbar/Navbar';
 import DrCard from '../DoctorCard/DrCard';
 
 
-
 const Notification = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState("");

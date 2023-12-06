@@ -16,7 +16,6 @@ const FindDoctorSearch = () => {
         // window.location.reload();
     }
 
-
     return (<div className='row mb-0 pb-0'>
             <div className='mx-auto w-75 mt-5 mb-0 pb-0'>
                 <h2 className=''> Find a doctor and consult instantly</h2>                

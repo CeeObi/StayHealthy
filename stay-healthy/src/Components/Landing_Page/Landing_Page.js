@@ -26,10 +26,8 @@ const Landing_Page = () => {
               </h4>
               <a href="/booking-consultation">
                 <button className="button">Get Started</button>
-              </a>
-                
-          </div>
-  
+              </a>                
+          </div>  
         </div>
       </section>
     </div>

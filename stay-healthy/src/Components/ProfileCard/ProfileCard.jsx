@@ -8,9 +8,6 @@ import { dataProfilePics } from '../../utils/GetData';
 import ProfileForm from './ProfileForm';
 import { Link } from 'react-router-dom';
 
-
-
-
 const ProfileCard = () => {
    const pemail = sessionStorage.getItem("email") ||null; // Get the email from session storage
    const pphone = sessionStorage.getItem("phone") ||null; // Get the email from session storage
