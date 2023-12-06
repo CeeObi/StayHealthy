@@ -5,25 +5,27 @@ import DrCard from '../DoctorCard/DrCard';
 
 
 const Notification = ({ children }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState("");
   const [doctorData, setDoctorData] = useState(null);
   const [appointmentData, setAppointmentData] = useState(null);
 
   useEffect(() => {
-    const storedUsername = sessionStorage.getItem('email');
-    const storedDoctorData = JSON.parse(localStorage.getItem('doctorData'));
-    const storedAppointmentData = storedDoctorData?.name //JSON.parse(localStorage.getItem(storedDoctorData?.name));
+    const storedSessionUsername = sessionStorage.getItem('email');
+    const storedLocalDoctorData = JSON.parse(localStorage.getItem('doctorData'));
+    const storedAppointmentData = storedLocalDoctorData?.name //JSON.parse(localStorage.getItem(storedDoctorData?.name));
     
-    if (storedUsername) {
+    if (storedSessionUsername) {
       setIsLoggedIn(true);
-      setUsername(storedUsername);
+      setUsername(storedSessionUsername);
+    }
+    else{
+        setIsLoggedIn(false);
+        setDoctorData(null);
     }
 
-    if (storedDoctorData) {
-        // alert("data present")
-        // console.log(storedDoctorData.name)
-      setDoctorData(storedDoctorData);
+    if (storedLocalDoctorData) {
+      setDoctorData(storedLocalDoctorData);
     }
 
     if (storedAppointmentData) {

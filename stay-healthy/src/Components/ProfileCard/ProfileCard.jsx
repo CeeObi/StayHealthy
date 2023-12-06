@@ -23,7 +23,6 @@ const ProfileCard = () => {
     setShowPForm(true)
     setEditProfile(true)
     e.stopPropagation();
-
    }
 
     return (
