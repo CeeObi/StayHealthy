@@ -36,8 +36,8 @@ const ProfileCard = () => {
                         <div class=" card-body mt-0  border-start ">                    
                             <h5 class="card-title text-center fs-6 fw-bold mb-0 pb-0">Welcome{pname&&`, ${pname}`}</h5>
                             {pname&&<p class="card-text mt-0 pt-0 lead fs-6 text-center">Patient Profile</p>}
-                            {pname&&<div className='fs-6 mx text-center mt-2'>Phone Number: <strong>{pphone}</strong></div>}
-                            <div className='fs-6 mx text-center mt-2'>Email: <strong>{pemail}</strong></div>                             
+                            {pname&&<p className='fs-6 mx text-center mt-2 text-wrap'>Phone Number: {pphone}</p>}
+                            <p className='fs-6 text-center mt-2'>Email: <strong>{pemail}</strong></p>                             
                         </div>       
                 </div> 
                 <ul>
