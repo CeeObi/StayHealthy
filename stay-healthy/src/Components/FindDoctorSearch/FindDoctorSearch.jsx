@@ -24,8 +24,8 @@ const FindDoctorSearch = () => {
                 <div className=" " hidden={listDoctorsHidden}>
                     {
                         specialities.map(speciality => 
-                        <div className="border rounded navblinks search-doctor-result-item border-primary border-opacity-50 " key={speciality} onMouseDown={() => handleDoctorSelect(speciality)}>                            
-                            <span><img src={process.env.PUBLIC_URL + '/images/search.svg'} alt="" style={{height:"10px", width:"10px"}} width="12" /></span>
+                        <div className=" border rounded navblinks search-doctor-result-item border-primary border-opacity-50 " key={speciality} onMouseDown={() => handleDoctorSelect(speciality)}>                            
+                            <span><img src={process.env.PUBLIC_URL + '/images/search.svg'} alt="" style={{height:"8px", width:"8px"}} width="10" /></span>
                             <span>{speciality}</span>
                             <span>SPECIALITY</span>                            
                         </div>)
