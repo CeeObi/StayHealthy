@@ -1,18 +1,28 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReportTableRow from './TableRow/ReportTableRow';
 
 
+import { useNavigate } from "react-router-dom";
 
-const ReportsLayout = ({avalableDocs}) => {
+
+
+const ReportsLayout = () => {
+    const navigate = useNavigate();
+    useEffect(() => {
+        const authtoken = sessionStorage.getItem("auth-token");
+        if (!authtoken) {
+        navigate("/login");
+        } 
+    }, [navigate]);
+    
   return (
     <div className='col-10 mx-auto mb-5'>
-    <hr className='rounded'/>
-        <h1 className='m-5'>Reports</h1>
-        <div className='mx-5'>
-            <table className='table table-hover'>
-                <thead className='fs-5 fw-bold bg-light text-center'>
+        <h1 className='m-4'>Reports</h1>
+        <div className='mx-4'>
+            <table className='table table-hover border'>
+                <thead className='fs-6 fw-bold navb text-center'>
                     <tr className=''>
-                        <td>Serial Number</td>
+                        <td className=''>Serial Number</td>
                         <td>Doctor Name</td>
                         <td>Doctor Specialty</td>
                         <td className=''>View Report</td>
@@ -37,10 +47,6 @@ const ReportsLayout = ({avalableDocs}) => {
 </div>
   )
 }
-
-
-
-
 
 
 
