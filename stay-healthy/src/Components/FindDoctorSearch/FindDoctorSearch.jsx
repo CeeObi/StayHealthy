@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import findDoctor from "../../utils/public/finddoc.svg";
 import { useNavigate } from 'react-router-dom';
 import {initSpeciality} from '../../utils/GetData';
+import './FindDoctorSearch.css';
 
 
 const FindDoctorSearch = () => {

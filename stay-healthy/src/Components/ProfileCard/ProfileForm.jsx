@@ -128,7 +128,7 @@ return (
                     </div>             
                     <input onChange={handleInputChange} id="name" name="name" type="text" className="form-control" defaultValue={userDetails.name} />
                 </div>
-                <button type="submit">Save</button>
+                <button className="btn btn-primary" type="submit">Save</button>
             </form>
         </div>
         ) 
