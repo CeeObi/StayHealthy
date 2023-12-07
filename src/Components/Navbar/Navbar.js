@@ -37,7 +37,7 @@ const Navbar = () => {
                         
                         usersName ? 
                         <>
-                            <div className="align-self-center mx-3 text-capitalize"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome, {usersName}</div>                
+                            <div className="align-self-center mx-3 text-capitalize navblinks"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome, {usersName}</div>                
                             <div class="dropdown-menu dropdown-menu-right mt-2 p-0" style={{width:"350px"}}>
                                 <ProfileCard />
                             </div>
