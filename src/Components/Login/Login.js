@@ -30,7 +30,7 @@ const Login = () => {
         password: password,
       }),
     });
-        
+        console.log(res)
     const json = await res.json();
     if (json.authtoken) {
       sessionStorage.setItem('auth-token', json.authtoken); 
@@ -70,7 +70,6 @@ const Login = () => {
                             </label>
                         </div>             
                         <input onChange={(e)=>setEmail(e.target.value)} id="emailinput" name="email" type="email" placeholder="Enter your email" className="form-control" required/>                    
-                        {showerr && <div className="alert alert-danger" style={{ color: 'red' }}>{showerr}</div>}                        
                     </div>
                     <div className="form-group mb-3">   
                         <div>
@@ -80,7 +79,7 @@ const Login = () => {
                         </div>             
                         <input onChange={(e)=>setPassword(e.target.value)} id="passwordinput" name="password" type="password" placeholder="Enter your password" className="form-control" required/>
                     </div>
-                    
+                    {showerr && <div className="alert alert-danger" style={{ color: 'red' }}>{showerr}</div>}     
                     <div className="mt-4">
                         <input className="btn btn-primary w-100 rounded-0 mb-3 " type="submit" value="Login"/>                       
                     </div>  

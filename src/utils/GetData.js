@@ -3,29 +3,6 @@ import mPrf from "./public/docprofileml.svg";
 import { jwtDecode } from "jwt-decode";
  
 
-
-
-const dataTest = [
-    {
-    "name": "Dr. Jiao Yang",
-    "ratings": "⭐⭐⭐⭐⭐",
-    "experience": 9,
-    "speciality": "Dentist"
-    },
-    {
-    "name": "Dr. Denis Raj",
-    "ratings": "⭐⭐⭐⭐",
-    "experience": 24,
-    "speciality": "Dentist"
-    },
-    {
-    "name": "Dr. Lyn Christie",
-    "ratings": "⭐⭐⭐",
-    "experience": 11,
-    "speciality": "Dentist"
-    },]
-
-
 const initSpeciality = [
 'Dentist', 'Gynecologist/obstetrician', 'General Physician', 'Dermatologist', 'Ear-nose-throat (ent) Specialist', 'Homeopath', 'Ayurveda'
 ]
@@ -48,4 +25,4 @@ const decodeJWTToken = (addToken) => {
 
 
 export default GetData;
-export {dataTest, dataProfilePics, initSpeciality, decodeJWTToken};
+export {dataProfilePics, initSpeciality, decodeJWTToken};
