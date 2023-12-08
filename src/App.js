@@ -6,6 +6,11 @@ import SignUp from './Components/Sign_Up/Sign_Up';
 import BookingConsultation from './Components/BookingConsultation';
 import Notification from './Components/Notification/Notification';
 import ReportsLayout from './Components/ReportsLayout/ReportsLayout';
+import ReviewForm from './Components/ReviewForm/ReviewForm';
+import { testData } from './utils/GetData';
+
+
+
 
 
 const App = () => {
@@ -19,6 +24,8 @@ const App = () => {
                   <Route path="/login" element={<Login/>}/>                                             
                   <Route path="/booking-consultation" element={<BookingConsultation/>}/>
                   <Route path="/reports" element={<ReportsLayout/>}/>
+                  <Route path="/reviews" element={<ReviewForm  avalableDocs={testData} />}/>
+                  
               </Routes>   
             </Notification>         
         </BrowserRouter>

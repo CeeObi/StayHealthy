@@ -24,5 +24,38 @@ const decodeJWTToken = (addToken) => {
 
 
 
+const testData = [{
+    "name": "Dr. Jiao Yang",
+    "ratings": "⭐⭐⭐⭐⭐",
+    "experience": 9,
+    "speciality": "Dentist"
+    },
+    {
+    "name": "Dr. Denis Raj",
+    "ratings": "⭐⭐⭐⭐",
+    "experience": 24,
+    "speciality": "Dentist"
+    },
+    {
+    "name": "Dr. Kevin Miller",
+    "ratings": "⭐⭐⭐⭐⭐",
+    "experience": 11,
+    "speciality": "Dentist"
+    },
+    {
+    "name": "Dr. Emily Clark",
+    "ratings": "⭐⭐⭐⭐⭐",
+    "experience": 11,
+    "speciality": "Gynecologist/Obstetrician"
+    },
+    {
+    "name": "Dr. Michael Smith",
+    "ratings": "⭐⭐⭐⭐⭐",
+    "experience": 40,
+    "speciality": "General Physician"
+    },]
+
+
+
 export default GetData;
-export {dataProfilePics, initSpeciality, decodeJWTToken};
+export {dataProfilePics, initSpeciality, decodeJWTToken,testData };

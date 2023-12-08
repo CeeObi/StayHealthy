@@ -28,8 +28,8 @@ const Navbar = () => {
                 <div className="d-flex">
                     <NavLink to="/" className=" fw-normal fs-6 mx-3 navblinks  ">Home</NavLink>                
                     <NavLink to="/booking-consultation" className=" fw-normal fs-6 mx-3 navblinks ">Appointments</NavLink>
-                    <NavLink to="/" className=" fw-normal fs-6 mx-3 navblinks ">Health Blog</NavLink>
-                    <NavLink to="/" className=" fw-normal fs-6 mx-3 navblinks ">Reviews</NavLink>  
+                    <NavLink to="https://dimsblog.onrender.com" target="_blank" className=" fw-normal fs-6 mx-3 navblinks ">Health Blog</NavLink>
+                    <NavLink to="/reviews" className=" fw-normal fs-6 mx-3 navblinks ">Reviews</NavLink>  
                 </div>
                 <div className="d-flex">
                 
