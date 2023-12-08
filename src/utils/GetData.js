@@ -1,5 +1,6 @@
 import fmPrf from "./public/docprofilefml.svg";
 import mPrf from "./public/docprofileml.svg";
+import { jwtDecode } from "jwt-decode";
  
 
 
@@ -38,7 +39,13 @@ const GetData = async (searchedDoctorsSpecialty) => {
     return  doctorsInSpecialty
 }
 
+const decodeJWTToken = (addToken) => {
+    const token = addToken;
+    const decodedToken = jwtDecode(token);
+    return decodedToken
+}
+
 
 
 export default GetData;
-export {dataTest, dataProfilePics, initSpeciality};
+export {dataTest, dataProfilePics, initSpeciality, decodeJWTToken};

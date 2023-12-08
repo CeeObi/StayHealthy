@@ -19,6 +19,8 @@ const Sign_Up = () => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
+                // "Access-Control-Allow-Headers": Content-Type, Authorization
+
             },
             body: JSON.stringify({
                 name: name,
@@ -27,7 +29,7 @@ const Sign_Up = () => {
                 phone: phone,
             }),
         });        
-        const json = await response.json();        
+        const json = await response.json();      
         if (json.authtoken) {
             sessionStorage.setItem("auth-token", json.authtoken);
             sessionStorage.setItem("name", name);
@@ -91,7 +93,6 @@ const Sign_Up = () => {
                             </label>
                         </div>             
                         <input value={email} onChange={(e)=>setEmail(e.target.value)} id="emailinput" name="email" type="email" placeholder="Enter your email" className="form-control" required/>                    
-                        {showerr && <div className="alert alert-danger" style={{ color: 'red' }}>{showerr}</div>}                        
                     </div>
                     <div className="form-group mb-3">   
                         <div>
@@ -101,7 +102,7 @@ const Sign_Up = () => {
                         </div>             
                         <input value={password} onChange={(e)=>setPassword(e.target.value)} id="passwordinput" name="password" type="password" placeholder="Enter your password" className="form-control" required/>
                     </div>
-                    
+                    {showerr && <div className="alert alert-danger" style={{ color: 'red' }}>{showerr}</div>}  
                     <div className="mt-4">
                         <input className="btn btn-primary w-100 rounded-0 mb-3 " type="submit" value="Submit" />                       
                     </div>  

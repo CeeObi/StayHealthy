@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "./Login.css"
 import { Link, useNavigate } from 'react-router-dom';
 import { API_URL } from '../../config';
+import { decodeJWTToken } from '../../utils/GetData';
 
 
 const Login = () => {    
@@ -29,19 +30,21 @@ const Login = () => {
         password: password,
       }),
     });
-    
+        
     const json = await res.json();
     if (json.authtoken) {
-      sessionStorage.setItem('auth-token', json.authtoken);        
+      sessionStorage.setItem('auth-token', json.authtoken); 
+      const userDetails = decodeJWTToken(json.authtoken)  
+      const{name,phone} = userDetails
       sessionStorage.setItem('email', email);
+      sessionStorage.setItem("name", name);
+      sessionStorage.setItem("phone", phone);      
       navigate('/');
       window.location.reload()
-      console.log(json)
 
     } else {
       if (json.error) {        
         for (const error of json.error) {
-            console.log(json.error )
             setShowerr(json.error);
         }
       } else {
