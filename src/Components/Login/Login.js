@@ -30,7 +30,6 @@ const Login = () => {
         password: password,
       }),
     });
-        console.log(res)
     const json = await res.json();
     if (json.authtoken) {
       sessionStorage.setItem('auth-token', json.authtoken); 
@@ -43,9 +42,9 @@ const Login = () => {
       window.location.reload()
 
     } else {
-      if (json.error) {        
+      if (json.error && (json.error.length<=1)) { 
         for (const error of json.error) {
-            setShowerr(json.error);
+            setShowerr(error.msg);
         }
       } else {
         setShowerr(json.error);
