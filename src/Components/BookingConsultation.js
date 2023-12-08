@@ -2,7 +2,7 @@ import { useSearchParams } from "react-router-dom";
 import DrCard from "./DoctorCard/DrCard";
 import FindDoctorSearch from "./FindDoctorSearch/FindDoctorSearch";
 import React, { useEffect, useState } from 'react'
-import GetData, { dataTest, dataProfilePics } from "../utils/GetData";
+import GetData, { dataProfilePics } from "../utils/GetData";
 import ReviewForm from "./ReviewForm/ReviewForm";
 
 
