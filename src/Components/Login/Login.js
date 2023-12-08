@@ -48,7 +48,6 @@ const Login = () => {
             setShowerr(json.error);
         }
       } else {
-        console.log(json.error )
         setShowerr(json.error);
       }
     }

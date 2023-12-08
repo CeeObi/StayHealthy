@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { API_URL } from "../../config";
 import { useNavigate } from "react-router-dom";
+import { decodeJWTToken } from "../../utils/GetData";
+
 
 
 const ProfileForm = ({showPForm}) => {
@@ -33,11 +35,13 @@ const ProfileForm = ({showPForm}) => {
                 "Email": email, // Add the email to the headers
             },
         });
+
         if (response.ok) {
+            console.log (response)
             const user = await response.json();
-            sessionStorage.setItem("name", user.name);
-            sessionStorage.setItem("phone", user.phone);
-            sessionStorage.setItem("email", user.email);
+            // sessionStorage.setItem("name", user.name);
+            // sessionStorage.setItem("phone", user.phone);
+            // sessionStorage.setItem("email", user.email);
             setUserDetails(user);
             setUpdatedDetails(user);            
         } 
@@ -51,14 +55,12 @@ const ProfileForm = ({showPForm}) => {
         // Handle error case
     }
     };
-
-    const handleInputChange = (e) => {
+    const handleInputChange = (e) => {        
         setUpdatedDetails({
             ...updatedDetails,
             [e.target.name]: e.target.value,
         });
     };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -74,17 +76,20 @@ const ProfileForm = ({showPForm}) => {
                 headers: {
                     "Authorization": `Bearer ${authtoken}`,
                     "Content-Type": "application/json",
-                    "Email": email,
+                    "Email": email,                    
                 },
                 body: JSON.stringify(payload),
             });
             if (response.ok) {
+                
                 // Update the user details in session storage
-                sessionStorage.setItem("name", updatedDetails.name);
-                sessionStorage.setItem("phone", updatedDetails.phone);
-                setUserDetails(updatedDetails);
-                // setEditMode(false);
-                // Display success message to the user
+                const json =  await response.json();  
+                sessionStorage.setItem('auth-token', json.authtoken);                 
+                const updatedValue = decodeJWTToken(json.authtoken) 
+                const{name,phone,email} = updatedValue
+                sessionStorage.setItem('email', email);
+                sessionStorage.setItem("name", name);
+                sessionStorage.setItem("phone", phone);   
                 alert(`Profile Updated Successfully!`);
                 navigate("/");
                 window.location.reload()
