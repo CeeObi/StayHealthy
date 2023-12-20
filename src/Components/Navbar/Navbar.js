@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import ProfileCard from '../ProfileCard/ProfileCard';
 
 
@@ -7,16 +7,20 @@ const getEmailFromSessionStorage = () => {
     return sessionStorage.getItem("email") || null;//"John@gmail.com";
 }
 
-const removeUserFromSessionStorage = () => {
-    sessionStorage.removeItem("email");
-    sessionStorage.removeItem("name");
-    sessionStorage.removeItem("auth-token");
-    sessionStorage.removeItem("phone");
-    window.location.reload()
-}
+
 
 const Navbar = () => {
     const usersName=getEmailFromSessionStorage()?.split('@', 1)[0];
+    const navigate=useNavigate()
+
+    const removeUserFromSessionStorage = () => {
+        sessionStorage.removeItem("email");
+        sessionStorage.removeItem("name");
+        sessionStorage.removeItem("auth-token");
+        sessionStorage.removeItem("phone");
+        navigate('/')
+    }
+    
   return (
     <div>
         <nav>
