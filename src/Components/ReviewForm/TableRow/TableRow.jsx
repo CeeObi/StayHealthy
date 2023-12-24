@@ -16,9 +16,9 @@ const TableRow = ({sn,docsName,docsSpecs}) => {
 
     return (
         <tr className=''>
-            <td className='text-center pt-3'>{sn}</td>
-            <td className='text-center  pt-3'>{docsName}</td>
-            <td className='text-center  pt-3'>{docsSpecs}</td>
+            <td className='text-center pt-3 d-none d-md-block'>{sn}</td>
+            <td className='text-center  pt-3'>{docsName} <p className='d-md-none'>({docsSpecs})</p></td>
+            <td className='text-center  pt-3 d-none d-md-block'>{docsSpecs}</td>
             {disableReview?
                 <td className='my-auto text-wrap text-center '><div className=' btn btn-primary disabled px-5' >CLICK HERE</div></td>
             :
@@ -34,7 +34,7 @@ const TableRow = ({sn,docsName,docsSpecs}) => {
                 </Popup>
             }
             <td className='text-center px-1  pt-3'>{ratingMessage.review}</td>
-            <td className='text-center px-1  pt-3 pt-3'>{ratingMessage.rating}</td>
+            <td className='text-center px-1  pt-3 pt-3  d-none d-md-block'>{ratingMessage.rating}</td>
         </tr>
     )
 }

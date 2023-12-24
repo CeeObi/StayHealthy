@@ -43,7 +43,7 @@ const DrCard = ({pixsrc=fmPrf, drname="Dr James Gian" , specialty="Dentist" , no
   return (
     <div  class="col col-10 mt-3 mx-auto">
         <div class="mx-auto card " style={{width:"100%"}}>
-            <div className='mx-auto col-4 col-sm-5 col-md-5 col-lg-6 mt-2 d-flex justify-content-center mb-0'>
+            <div className='mx-auto col-4 col-sm-5 col-md-4 col-lg-5 mt-2 d-flex justify-content-center mb-0'>
                 <img src={srcPix} class="card-img-top img-thumbnail mb-0 pb-0 rounded-circle border-primary" alt="..." style={{width:"100%"}}/>
             </div>
             <div class="card-body mt-0 pt-1 pb-0 mb-0 ">
