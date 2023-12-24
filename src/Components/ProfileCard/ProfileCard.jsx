@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import 'reactjs-popup/dist/index.css';
 import { dataProfilePics } from '../../utils/GetData';
 import ProfileForm from './ProfileForm';
 import { Link } from 'react-router-dom';
 
-const ProfileCard = () => {
+const ProfileCard = ({colSize="col-12"}) => {
    const pemail = sessionStorage.getItem("email") ||null; // Get the email from session storage
    const pphone = sessionStorage.getItem("phone") ||null; // Get the email from session storage
    const pname = sessionStorage.getItem("name") ||null; // Get the email from session storage()
@@ -17,7 +17,7 @@ const ProfileCard = () => {
     e.stopPropagation();
    }
     return (
-      <div  class="col-12 p-0 mx-auto shadow mb-0">
+      <div  class={`${colSize} p-0 mx-auto shadow mb-0`}>
       {!editProfile&&pemail&&
         <>
             <div class="mx-auto card rounded-0 rounded-top border-0 shadow mb-0 pb-0" style={{width:"100%", backgroundColor: "" }}>

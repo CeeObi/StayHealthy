@@ -39,20 +39,14 @@ const ProfileForm = ({showPForm}) => {
         if (response.ok) {
             console.log (response)
             const user = await response.json();
-            // sessionStorage.setItem("name", user.name);
-            // sessionStorage.setItem("phone", user.phone);
-            // sessionStorage.setItem("email", user.email);
             setUserDetails(user);
             setUpdatedDetails(user);            
         } 
         else {
-            // Handle error case
             throw new Error("Failed to fetch user profile");
             }
         }
     } catch (error) {
-        console.error(error);
-        // Handle error case
     }
     };
     const handleInputChange = (e) => {        

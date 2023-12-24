@@ -11,7 +11,6 @@ const FindDoctorSearch = () => {
     const [listDoctorsHidden, setListDoctorsHidden] = useState(true);
     const [searchDoctor, setSearchDoctor] = useState('');
     const handleDoctorSelect=(eventSpecialtySearched) => {
-        console.log(`${eventSpecialtySearched} This event`)
         setSearchDoctor(eventSpecialtySearched)
         navigate(`/booking-consultation?specialty=${eventSpecialtySearched}`);
         // window.location.reload();
@@ -31,8 +30,8 @@ const FindDoctorSearch = () => {
                         </div>)
                     }
                 </div>
-                <div className='mx-auto my-3 d-flex justify-content-center w-75' >
-                    <img className=' ' src={findDoctor} alt="" hidden={!listDoctorsHidden} style={{width:"60%"}}/>
+                <div className='mx-auto my-3 d-flex justify-content-center col-sm-9 col-md-7 col-lg-8 col-xl-6' >
+                    <img className='w-100 ' src={findDoctor} alt="" hidden={!listDoctorsHidden}/>
                 </div>
             </div>
       </div>

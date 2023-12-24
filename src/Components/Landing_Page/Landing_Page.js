@@ -6,12 +6,10 @@ const Landing_Page = () => {
     <div>
         <section className="hero-section">
         <div>
-          <div data-aos="fade-up" className="flex-hero">
-              
+          <div data-aos="fade-up" className="flex-hero">              
               <h1>
                 Your Health<br/>
-                <span className="text-gradient">
-                  
+                <span className="text-gradient">                  
                   Our Responsibility
                 </span>
               </h1>
