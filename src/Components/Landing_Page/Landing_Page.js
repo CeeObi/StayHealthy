@@ -13,8 +13,11 @@ const Landing_Page = () => {
     if (window.innerWidth<576){ 
       setHandleSize(true)
     }  
-  } 
+    } 
     window.addEventListener('resize', handleResize)
+    if (window.innerWidth<576){ 
+      setHandleSize(true)
+    }  
 })
 
 
