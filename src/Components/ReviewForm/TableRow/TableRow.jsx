@@ -1,9 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Popup from 'reactjs-popup';
 import GiveReviews from '../GiveReview/GiveReviews';
 
 
+
+
 const TableRow = ({sn,docsName,docsSpecs}) => {
+    const [handleSize,setHandleSize] = useState(false)  
+    useEffect(() => {
+      const handleResize = () => {
+      if (window.innerWidth >= 576){
+          setHandleSize(false) }
+      if (window.innerWidth<576){ 
+        setHandleSize(true)
+      }  
+      } 
+      window.addEventListener('resize', handleResize)
+      if (window.innerWidth<576){ 
+        setHandleSize(true)
+      }  
+  })
+  
+
+
+  
+
     const [ratingMessage,setRatingMessage] = useState({})
     const [disableReview,setDisableReview] = useState(false)
     const handleReviewSubmit = (eventReviewData) => {
@@ -14,10 +35,11 @@ const TableRow = ({sn,docsName,docsSpecs}) => {
     };    
     const [showModal,setShowModal] = useState(false);
 
+
     return (
         <tr className='border text-wrap'>
             <td className='text-center pt-3 d-none d-md-table-cell'>{sn}</td>
-            <td className='text-center pt-3 px-1 px-sm-2'>{docsName} <p className='d-md-none ps-0 ms-0'>({docsSpecs})</p></td>
+            <td className='text-center pt-3 px-1 px-sm-2'>{docsName} <p className='d-md-none ps-0 ms-0' style={{fontSize: handleSize && "11.5px"}}>({docsSpecs})</p></td>
             <td className='text-center pt-3 d-none d-md-table-cell  text-wrap'>{docsSpecs}</td>
             {disableReview?
                 <td className='my-auto text-wrap text-center border-0 '><div className=' btn btn-primary btn-sm disabled px-2 px-lg-5 ' >CLICK HERE</div></td>

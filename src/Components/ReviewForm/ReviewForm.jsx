@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import TableRow from './TableRow/TableRow';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -14,7 +14,7 @@ const ReviewForm = ({avalableDocs}) => {
                 <thead className='fs-5 fw-bold bg-light text-center border'>
                     <tr className=''>
                         <td className=' d-none d-md-block border-0'>Serial Number</td>
-                        <td className='border-0'>Doctor Name</td>
+                        <td className='border-0 '>Doctor Name</td>
                         <td className='d-none d-md-block border-0'>Doctor Specialty</td>
                         <td className='border-0'>Provide Feedback</td>
                         <td className='border-0'>Review Given</td>

@@ -26,7 +26,7 @@ const FindDoctorSearch = () => {
                         <div className=" border rounded navblinks search-doctor-result-item border-primary border-opacity-50 " key={speciality} onMouseDown={() => handleDoctorSelect(speciality)}>                            
                             <span><img src={process.env.PUBLIC_URL + '/images/search.svg'} alt="" style={{height:"8px", width:"8px"}} width="10" /></span>
                             <span>{speciality}</span>
-                            <span>SPECIALITY</span>                            
+                            <span className='d-none d-sm-inline'>SPECIALITY</span>                            
                         </div>)
                     }
                 </div>
