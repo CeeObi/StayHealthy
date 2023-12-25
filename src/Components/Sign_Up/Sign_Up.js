@@ -63,11 +63,8 @@ const Sign_Up = () => {
                     <div className="form-group mb-3">   
                         <label htmlFor="roleinput">Role</label>
                         <select className="form-control" id="roleinput" >
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                            <option>Doctor</option>
+                            <option>Patient</option>
                         </select>
                     </div>                    
                     <div className="form-group mb-3">   

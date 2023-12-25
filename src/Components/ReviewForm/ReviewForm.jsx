@@ -6,10 +6,10 @@ import { v4 as uuidv4 } from 'uuid';
 const ReviewForm = ({avalableDocs}) => {
     const noOfDocs=avalableDocs;
     return (
-    <div className='col-11 col-lg-10 mx-auto mb-5'>
+    <div className='px-1 px-sm-3 col-12 col-lg-10 mx-auto mb-5'>
         <hr className='rounded'/>
         <h1 className='my-5'>Reviews</h1>
-        <div className='mx-auto'>
+        <div className='mx-auto row-cols-1'>
             <table className='table table-hover mx-auto'>
                 <thead className='fs-5 fw-bold bg-light text-center border'>
                     <tr className=''>

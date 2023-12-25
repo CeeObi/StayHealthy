@@ -59,7 +59,7 @@ const Login = () => {
             <div className="mx-auto col-9 col-xs-10 col-sm-8 col-md-6 col-lg-5 col-xl-4 form-bg shadow px-3 px-sm-4 px-lg-5">
                 <h2 className="text-black text-center font-bold text-3xl mt-5">Login</h2>
                 <p className="text-center">
-                    Are you a new member? <Link to="/register" className="text-capitalize text-decoration-none text-primary"> Sign Up Here</Link>
+                    Are you a new member? <Link to="/register" className="text-capitalize text-decoration-none text-primary"> Signup</Link>
                 </p>
                 <form method="POST" className="mx-auto w-100" onSubmit={handleLogin}>            
                     <div className="form-group mb-3">   
