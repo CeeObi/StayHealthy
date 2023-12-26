@@ -23,7 +23,7 @@ const BookingConsultation = () => {
         ));
     }},[searchParams])
 
-  return (<>
+  return (<div>
     <FindDoctorSearch />
     <div className='mx-auto w-75 my-5 pt-0 mt-0'>
         {(searchedDoctorsSpecialty) && <h4 className='text-center mb-0 pb-0'><strong className="text-primary fs-3 fw-bold">{availableDoctors.length}</strong> doctors available</h4>}
@@ -46,7 +46,7 @@ const BookingConsultation = () => {
     </div>
     {availableDoctors.length ? <ReviewForm avalableDocs={availableDoctors} /> : null }
         
-    </>
+    </div>
   )
 }
 

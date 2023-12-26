@@ -16,7 +16,7 @@ const FindDoctorSearch = () => {
         // window.location.reload();
     }
 
-    return (<div className='row mb-0 pb-0'>
+    return (<div className=' mb-0 pb-0'>
             <div className='mx-auto w-75 mt-5 mb-0 pb-0'>
                 <h2 className=''> Find a doctor and consult instantly</h2>                
                 <input onChange={(event)=>setSearchDoctor(event.target.value)}  value={searchDoctor} type="text" class="form-control border-primary opacity-50 fa fa-search" id="inlineFormInputGroupUsername" placeholder="&#xF002; Search doctors by specialty..." onFocus={()=>setListDoctorsHidden(false)} onBlur={()=>setListDoctorsHidden(true)}/>

@@ -42,10 +42,10 @@ transform: scale(0.98);}
     font-size: 50px;
   }
 }
+
 @media (max-width: 576px) {
-  .mngwidth {
-    width: 10px;
-    margin-right: 50%;
+  .fntsz {
+    font-size: 17px;
   }
 }
 

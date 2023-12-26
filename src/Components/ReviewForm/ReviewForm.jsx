@@ -11,14 +11,14 @@ const ReviewForm = ({avalableDocs}) => {
         <h1 className='my-5'>Reviews</h1>
         <div className='mx-auto row-cols-1'>
             <table className='table table-hover mx-auto'>
-                <thead className='fs-5 fw-bold bg-light text-center border'>
+                <thead className='fs-5 fw-bold navb text-center border'>
                     <tr className=''>
                         <td className=' d-none d-md-block border-0'>Serial Number</td>
                         <td className='border-0 '>Doctor Name</td>
                         <td className='d-none d-md-block border-0'>Doctor Specialty</td>
                         <td className='border-0'>Provide Feedback</td>
                         <td className='border-0'>Review Given</td>
-                        <td className=' d-none d-md-block border-0'>Rating</td>
+                        <td className='d-none d-md-block border-0'>Rating</td>
                     </tr>
                 </thead>        
                 <tbody className='mx-auto '>   

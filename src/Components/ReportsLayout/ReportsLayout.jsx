@@ -13,16 +13,16 @@ const ReportsLayout = () => {
     
   return (
     <div className='px-1 px-sm-3 col-12 col-lg-10 mx-auto mb-5'>
-        <h1 className='m-4'>Reports</h1>
-        <div className='mx-4'>
-            <table className='table table-hover border'>
-                <thead className='fs-6 fw-bold navb text-center'>
+        <h1 className='my-5'>Reports</h1>
+        <div className='mx-auto row-cols-1'>
+            <table className='table table-hover mx-auto'>
+                <thead className='fs-5 fw-bold navb text-center'>
                     <tr className=''>
-                        <td className='d-none d-md-block border-0'>Serial Number</td>
-                        <td>Doctor Name</td>
-                        <td>Doctor Specialty</td>
-                        <td className=''>View Report</td>
-                        <td>Download Report</td>
+                        <td className=' d-none d-md-block border-0'>Serial Number</td>
+                        <td className='fntsz'>Doctor Name</td>
+                        <td className='fntsz'>Doctor Specialty</td>
+                        <td className='fntsz'>View Report</td>
+                        <td className='fntsz'>Download Report</td>
                     </tr>
                 </thead>        
                 <tbody className='mx-5 '>  
