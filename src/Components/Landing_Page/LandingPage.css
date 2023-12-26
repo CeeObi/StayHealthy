@@ -163,6 +163,22 @@ li {
     width: 200px;
     animation: blobani 8s infinite ease;
 }
+
+@media (max-width: 576px) {
+.blue1 {
+    background-color: #2937a392;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: -30%;
+    bottom: -25%;
+    margin: auto;
+    height: 150px;
+    width: 200px;
+    animation: blobani 8s infinite ease;
+}}
+
+@media (min-width: 576px) {
 .blue1 {
     background-color: #2937a392;
     position: absolute;
@@ -174,7 +190,7 @@ li {
     height: 150px;
     width: 200px;
     animation: blobani 8s infinite ease;
-}
+}}
   
   
   @keyframes blobani {

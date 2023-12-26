@@ -37,3 +37,15 @@ transform: scale(0.98);}
 }
 
 
+@media (max-width: 576px) {
+  .landpxl {
+    font-size: 50px;
+  }
+}
+@media (max-width: 576px) {
+  .mngwidth {
+    width: 10px;
+    margin-right: 50%;
+  }
+}
+

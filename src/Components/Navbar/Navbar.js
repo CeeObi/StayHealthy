@@ -24,7 +24,7 @@ const Navbar = () => {
   return (
     <div className='m-0 p-0'>
         <nav className='p-0 m-0'>
-            <div className="navb d-flex justify-content-between align-items-center px-4">
+            <div className="navb d-flex justify-content-between align-items-center px-4 mx-0">
                 <div className="d-flex justify-content-between align-items-center">
                     <h1 className="py-2 fs-3 ms-3">StayHealthy</h1>
                     <img width="40" height="35" src="https://img.icons8.com/ios-glyphs/90/120AFB/health-checkup.png" alt="StayHealthy Logo"/>
@@ -35,7 +35,7 @@ const Navbar = () => {
                     <NavLink to="https://dimsblog.onrender.com" target="_blank" className=" fw-normal fs-6 mx-3 navblinks ">Health Blog</NavLink>
                     <NavLink to="/reviews" className=" fw-normal fs-6 mx-3 navblinks">Reviews</NavLink>                      
                 </div>
-                <div className='d-lg-none me-3'>
+                <div className='d-lg-none dropstart'>
                     <button class="btn btn-outline-primary" type="button" id="navMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <FontAwesomeIcon icon={faBars} />
                     </button>
@@ -45,8 +45,8 @@ const Navbar = () => {
                         <NavLink to="https://dimsblog.onrender.com" target="_blank" className=" fw-normal fs-6 navblinks dropdown-item">Health Blog</NavLink>
                         <NavLink to="/reviews" className=" fw-normal fs-6 navblinks dropdown-item ">Reviews</NavLink> 
                         {!usersName ?<>
-                        <NavLink to="/login" className="btn btn-outline-primary mx-3 px-4 shadow rounded-pill nav-butn mt-1">Login</NavLink>  
-                        <NavLink to="/register" className="btn btn-primary me-3 px-4 shadow rounded-pill nav-butn mt-1">Sign Up</NavLink> 
+                        <NavLink to="/login" className="btn btn-outline-primary ms-2 px-4 shadow rounded-pill nav-butn mt-1">Login</NavLink>  
+                        <NavLink to="/register" className="btn btn-primary ms-2 px-4 shadow rounded-pill nav-butn mt-1">Signup</NavLink> 
                         </> : <>
                         <NavLink onClick={removeUserFromSessionStorage} className="btn btn-outline-primary ms-2 me-3 px-4 mt-1 shadow rounded-pill nav-butn">Logout</NavLink>             
                         {<div class="mx-3 mt-3" style={{width:"300px"}}>
@@ -68,7 +68,7 @@ const Navbar = () => {
                         </>                    
                         :
                         <>                        
-                        <NavLink to="/register" className="btn btn-primary me-3 px-4 shadow rounded-pill nav-butn">Sign Up</NavLink> 
+                        <NavLink to="/register" className="btn btn-primary me-3 px-4 shadow rounded-pill nav-butn">Signup</NavLink> 
                         </>
                     }
                     {
