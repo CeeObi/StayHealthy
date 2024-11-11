@@ -24,8 +24,7 @@ const App = () => {
                   <Route path="/login" element={<Login/>}/>                                             
                   <Route path="/booking-consultation" element={<BookingConsultation/>}/>
                   <Route path="/reports" element={<ReportsLayout/>}/>
-                  <Route path="/reviews" element={<ReviewForm  avalableDocs={testData} />}/>
-                  
+                  <Route path="/reviews" element={<ReviewForm  avalableDocs={testData} />}/>                  
               </Routes>   
             </Notification>         
         </BrowserRouter>

@@ -1,51 +1,56 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+        "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-.navb{
-    font-family: 'Jost', sans-serif;
-    background-color: #e8eef6
+.navb {
+    font-family: "Jost", sans-serif;
+    background-color: #e8eef6;
 }
 
-.navblinks{
-transition: all 0.5s ease-in-out;}
-
-.navblinks:hover{
-color: rgb(143, 143, 144);
-transform: scale(0.98);}  
-
-
-.nav-butn{
-    transition: all 0.5s ease-in-out;}
-
-.nav-butn:hover{
-    transform: scale(0.98);} 
-
-.form-bg{
-    font-family: 'Jost', sans-serif;
-    background-color: #E5E5E5 ;
+.navblinks {
+    transition: all 0.5s ease-in-out;
 }
 
+.navblinks:hover {
+    color: rgb(143, 143, 144);
+    transform: scale(0.98);
+}
 
-@media (max-width: 576px) {
-  .landpxl {
-    font-size: 50px;
-  }
+.nav-butn {
+    transition: all 0.5s ease-in-out;
+}
+
+.nav-butn:hover {
+    transform: scale(0.98);
+}
+
+.form-bg {
+    font-family: "Jost", sans-serif;
+    background-color: #e5e5e5;
 }
 
 @media (max-width: 576px) {
-  .fntsz {
-    font-size: 17px;
-  }
+    .landpxl {
+        font-size: 50px;
+    }
 }
 
+@media (max-width: 576px) {
+    .fntsz {
+        font-size: 17px;
+    }
+}
+
+.dropdown-width {
+    width: 330px;
+    padding-right: 10px;
+    /* margin-top: 60px; */
+}
